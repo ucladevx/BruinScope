@@ -17,7 +17,7 @@ https://github.com/ucladevx/bruinscope/wiki
 ## Deployment Instructions:
 
 Download the project:
-`$ git clone https://github.com/ucladevx/bruinscope.git
+`$ git clone https://github.com/ucladevx/bruinscope.git`
 
 Install ruby gems:
 `$ bundle install`
