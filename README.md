@@ -22,6 +22,12 @@ Download the project:
 Install ruby gems:
 `$ bundle install`
 
+Get CarrierWave onto your machine (image uploads):
+`$ gem install carrierwave -v "1.0.0"`
+
+Install MiniMagick onto your machine (image uploads):
+`$ brew install imagemagick`
+
 Initialize postgreSQL: This can be done through the command line, or through the Postgres app (https://postgresapp.com/). NOTE: Be sure to create the user and password for postgreSQL as specified in config/database.yml 
 
 To give the right permissions to bruinscope user run the following command:
