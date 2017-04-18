@@ -38,6 +38,22 @@ gem 'jbuilder', '~> 2.5'
 # Documentation: https://github.com/plataformatec/devise
 gem 'devise'
 
+# Pagination gem for eventual infinite scroll
+# Documentation: https://github.com/mislav/will_paginate
+gem 'will_paginate', '~> 3.1.0'
+
+# Provides a single Comment model that can be attached to any model with comment threads
+# Documentation: https://github.com/elight/acts_as_commentable_with_threading
+gem 'acts_as_commentable_with_threading', '~> 2.0.1'
+
+# Provides a simple and extremely flexible way to upload files from Ruby applications
+# Documentation: https://github.com/carrierwaveuploader/carrierwave
+gem 'carrierwave', '~> 1.0'
+
+# A gem used by CarrierWave to resize images
+# Documentation: https://github.com/minimagick/minimagick
+gem 'mini_magick', '~> 4.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
