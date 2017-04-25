@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'a07f48916f601f596525f32b222bff1189fd055a0dcf97185bd9c6ee9f29729b6c97d4205bc6358f06d8a135a18249651bb84744ff35b84c3f2c23a26f8255cd'
+  # config.secret_key = '8785517e18ff91b98899feb7a3e49f5ca1f30a5f191546a8467a0f23c7f56edd6b35107c693fbfcf979a1222f3182dc3b7c1a1e67890da5823d80795dfba210'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -265,4 +265,10 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  # Initialize Google OAuth Configuration
+  config.omniauth :google_oauth2, Rails.application.secrets.oauth_client_id, Rails.application.secrets.oauth_client_secret, {
+    scope: "email, profile",
+    hd: "g.ucla.edu"
+  }
 end

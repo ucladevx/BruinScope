@@ -11,6 +11,17 @@
   <body>
 		<p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p>
+
+    <!-- Nav Bar-->
+    <%= link_to "BruinScope", root_path %>
+    <div class="nav-account-links">
+    <% if user_signed_in? %>
+        <%= link_to "My Profile", current_user, :id =>"nav-profile-button" %>
+         <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    <% else %>
+      <%= link_to "Sign in with UCLA", user_google_oauth2_omniauth_authorize_path %>
+    <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

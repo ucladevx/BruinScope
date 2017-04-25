@@ -38,6 +38,10 @@ gem 'jbuilder', '~> 2.5'
 # Documentation: https://github.com/plataformatec/devise
 gem 'devise'
 
+# Google Authentication
+# Documentation: https://github.com/zquestz/omniauth-google-oauth2
+gem "omniauth-google-oauth2"
+
 # Pagination gem for eventual infinite scroll
 # Documentation: https://github.com/mislav/will_paginate
 gem 'will_paginate', '~> 3.1.0'
