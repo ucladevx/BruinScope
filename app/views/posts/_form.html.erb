@@ -1,0 +1,10 @@
+<%= form_for(@post) do |f| %>
+  <div class="form-group">
+    <%= f.label 'Update status' %><br>
+      <%= f.text_field :title, class: 'form-control', autofocus: true,
+          placeholder: 'Title' %>
+      <%= f.text_area :body, class: 'form-control', autofocus: true,
+          placeholder: 'Rails is a fucking shitty framework never use it' %>
+  </div>
+  <%= f.submit :post, class: 'btn btn-primary'%>
+<% end %>
