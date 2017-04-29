@@ -5,8 +5,10 @@
 @import "colors";
 
 .postcard {
-	position: fixed;
+	text-decoration: none !important;
+	text-align: center;
+	margin: 10px 10px 10px 10px;
 	height: 100px;
 	width: 100px;
-	background-color: $black;
+	background-color: $color-secondary;
 }

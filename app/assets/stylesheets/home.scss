@@ -1,0 +1,21 @@
+@import "vars";
+@import "colors";
+
+.home-posts {
+  //background-color: $color-text-light-1;
+  //box-shadow: 0 2px 2px 0 rgba($color-accent, .25), 0 2px 8px 1px rgba($color-acce
+  padding: 16px;
+}
+
+.home-grid.col {
+  padding: 16px;
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col {
+    float: none;
+  }
+}

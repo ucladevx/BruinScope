@@ -1,9 +1,9 @@
 <!--- Always start by rendering the partials that exist on the page, to nicely componentize
 	the page -->
-<div class="show-me">
+<div class="showme">
 <!--- We are passing a variable for the partial to then be able to use throughout its code
 	and note that the only reason we are passing the first post by default so then we can
 	override the post based on the id from the GET request -->
-	<%= render partial: 'shared/getpostmodal', locals: {post: @posts.first} %>
+	<%= render partial: 'shared/getpostmodal', locals: {post: nil} %>
 </div>
 <%= render partial: 'shared/postsgrid', locals: {posts: @posts} %>

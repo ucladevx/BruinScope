@@ -1,4 +1,5 @@
 <% if post %>
 		<%= link_to main_app.post_path(post.id), class: "postcard", remote: true do %>
+			<h3> Post <%= post.id %> </h3>
 		<% end %>
 <% end %>
