@@ -1,0 +1,6 @@
+// This will inject HTML code to render the shared post modal, with a new local for the post from
+// the show action in posts_controller.rb -- Note that this is overriding the local from the
+// views/pages/home.html.erb that was the very first post from the pages_controller.rb home action
+$('.showme').html("<%= escape_javascript(render partial: "shared/getpostmodal", locals: {post: @post } ) %>");
+// Will activate the showModal function in the assets/javascript/getpostmodal.js
+showModal('postview');

@@ -1,0 +1,28 @@
+// Styles for the navbar partial
+@import "vars";
+@import "colors";
+
+nav, .nav {
+	position: fixed;
+	height: $nav-height;
+	width: 100%;
+	background-color: $black;
+	top: 0px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.12);
+	a {
+		color: $white;
+		text-decoration: none !important;
+	}
+
+	.bruinscope {
+		font-size: 16px;
+		letter-spacing: 1.6px; 
+		padding-top: 15px; 
+		padding-bottom: 15px; 
+		padding-left: 54px; 
+		padding-right: 54px;	
+	}
+	.nav-account-links{
+		float: right;
+	}
+}

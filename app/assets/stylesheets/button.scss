@@ -1,0 +1,33 @@
+@import "vars";
+@import "colors";
+
+button {
+  padding         : $button-padding $button-padding-h;
+  min-width       : $button-min-width;
+  background-color: transparent;
+  border          : 0;
+  border-radius   : 4px;
+  font-weight     : 700;
+  text-transform  : uppercase;
+  color           : $color-primary;
+  text-align      : center;
+  transition      : 0.125s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor          : pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button.add-button{
+  z-index: 32;
+  height: 50px;
+  width: 50px;
+ border-radius: 0px;
+  position: fixed;
+  bottom: 100px;
+  right: 32px;
+  background-color: $black;
+  font-size: 20px;
+  color: $white;
+}

@@ -1,0 +1,37 @@
+<!--- This partial is what is responsible for being shown when you click a post
+	card. The flow for this call is 
+	home.html.erb renders postsgrid which renders a postcard for all the posts from the 
+	home action of pages_controller. For each postcard there is a link_to to the 
+	post_path(post.id) that is implicitly tied to the show action in posts_controller.rb.
+	This link_to is remote: true which means its an AJAX call which activates the respond_to
+	block in the show action. We respond with format.js which will load up the views/posts/show.js.erb
+	which then triggers an HTML injection into the showme div inside home.html.erb which then
+	render this file
+-->
+<% if post %>
+<div class="getpostmodal postview yhide">
+  <div class="overlay" onclick="hideModal('postview')">
+  </div>
+  <div class="getpostcard">
+    <div class="button-close" onclick="hideModal('postview')">
+      <i aria-hidden="true">X</i>
+    </div>
+    <div class="inner">
+      <div class="head">
+        <h1 class="title">
+          <% if post and post.title %>
+            <%= post.title %>
+          <% end %>
+        </h1>
+      </div>
+      <div class="content">
+        <div class="experience">
+          <% unless post.experience.nil?  %>
+            <%= post.experience %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

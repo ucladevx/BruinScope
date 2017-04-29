@@ -1,0 +1,14 @@
+<!--- This partial should be rendered on all pages, so put it in the application.html.erb -->
+<nav class="">
+	<div class="bruinscope">
+		<%= link_to "BRUINSCOPE", main_app.root_path %>
+		<div class="nav-account-links">
+			<% if user_signed_in? %>
+				<%= link_to "My Profile", current_user, :id =>"nav-profile-button" %>
+				<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+			<% else %>
+				<%= link_to "Sign in with UCLA", user_google_oauth2_omniauth_authorize_path %>
+			<% end %>
+		</div>
+	</div>
+</nav>
