@@ -19,7 +19,7 @@
     <div class="inner">
       <div class="head">
         <h1 class="title">
-          <% if post and post.title %>
+					<% unless post.title.nil? %>
             <%= post.title %>
           <% end %>
         </h1>
@@ -27,7 +27,14 @@
       <div class="content">
         <div class="experience">
           <% unless post.experience.nil?  %>
+						<h3> Experience </h3>
             <%= post.experience %>
+          <% end %>
+        </div>
+        <div class="experience">
+          <% unless post.question.nil?  %>
+						<h3> Question </h3>
+            <%= post.question%>
           <% end %>
         </div>
       </div>
