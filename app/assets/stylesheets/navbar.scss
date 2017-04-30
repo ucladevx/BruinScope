@@ -39,8 +39,15 @@ body {
 	padding-bottom: 13px;
 	opacity: .3;
 	text-transform: uppercase;
+	transition: all 0.5s;
 }
-.nav>li>a:focus, .nav>li>a:hover{
+.nav>li>a.navbar-link:focus,
+.nav>li>a.navbar-link:hover,
+.nav>li>a.navbar-link.active{
+	border-bottom: 2px solid white;
+	opacity: 1 !important;
+}
+.nav>li>a:hover {
 	background-color: transparent;
 }
 a.nav-img-parent{
@@ -78,10 +85,6 @@ a.nav-img-parent{
 .big-search-bar > :-moz-placeholder { /* Firefox 18- */
 	color: white;
 	opacity: .3;
-}
-.active{
-	border-bottom: 2px solid white;
-	opacity: 1 !important;
 }
 .inner-addon {
 	position: relative;
