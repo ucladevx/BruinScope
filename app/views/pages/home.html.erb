@@ -1,2 +1,10 @@
-<h1> Welcome Home </h1>
-<%= render 'posts/form' %>
+<!--- Always start by rendering the partials that exist on the page, to nicely componentize
+	the page -->
+<div class="showme">
+
+<!--- We are passing a variable for the partial to then be able to use throughout its code
+	and note that the only reason we are passing the first post by default so then we can
+	override the post based on the id from the GET request -->
+	<%= render partial: 'shared/getpostmodal', locals: {post: nil} %>
+</div>
+<%= render 'shared/feedcard', locals: {posts: @posts} %>

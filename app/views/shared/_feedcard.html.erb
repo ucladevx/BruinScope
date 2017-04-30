@@ -1,0 +1,13 @@
+<div class="card feed-card trending-card">
+    <h1 style="margin-bottom: 15px;">
+        Trending
+    </h1>
+    <div class="line-divider add-your-experience-divider"></div>
+    <%= link_to main_app.post_path(1), class: "", remote: true do %>
+      <h2 class="trending-card-input">Add your experience...</h2>
+		<% end %>
+    <div class="line-divider add-your-experience-divider" style="margin-bottom: 40px !important;"></div>
+    <div style="height: 1000px;">
+      <%= render partial: 'shared/postslist', locals: {posts: @posts} %>
+    </div>
+</div>
