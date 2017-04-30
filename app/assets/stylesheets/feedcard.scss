@@ -1,0 +1,68 @@
+h2{
+     font-size: 16px;
+     font-weight: 700;
+     margin: 0;
+ }
+ .line-divider{
+     height: 1px;
+     background-color: #DCE0E0;
+     width: 550px;
+     margin-bottom: 40px;
+     margin-top: 40px;
+ }
+ .add-your-experience-divider{
+     margin-bottom: 0 !important;
+     margin-top: 0 !important;
+ }
+ .feed-card, .trending-card{
+     width: 640px;
+     margin: 0 auto;
+     background: #FFFFFF;
+     margin-top: 100px;
+     padding-top: 30px;
+     padding-left: 30px;
+ }
+ .trending-card-input{
+     line-height: 69px;
+     color: #D3D3D3;
+ }
+ .first-experience-line{
+     color: #B1B1B1;
+     font-weight: 400;
+     display: flex;
+     justify-content: space-between;
+ }
+ .company-info{
+     color: #B1B1B1;
+     font-weight: 700;
+ }
+ .position-info{
+     color: #B1B1B1;
+     font-weight: 400;
+ }
+ .tiny-company-icon{
+     width: 20px;
+     height: auto;
+     margin-right: 10px;
+ }
+ .upvote-btn{
+     width: 73px;
+     height: 28px;
+     border-radius: 5px;
+     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12);
+     color: #FF6376;
+     font-weight: 700;
+ }
+ .upvote-btn-line{
+     margin-top: 6px;
+     margin-bottom: 6px;
+     height: 16px;
+     width: 1px;
+     background-color: #DDDDDD;
+     display: inline-block;
+     vertical-align: top;
+ }
+ .fa-arrow-circle-o-up{
+     line-height: 28px;
+     font-size: 16px;
+ }

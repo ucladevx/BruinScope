@@ -1,0 +1,79 @@
+@import "vars";
+@import "colors";
+
+body.locked {
+	overflow: hidden;
+}
+
+.getpostmodal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 256;
+	overflow: auto;
+
+	&.yhide{
+		display: none;
+	}
+
+	.overlay {
+		position: fixed;
+		z-index: 32;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(0,0,0,0.5);
+	}
+
+	.getpostcard {
+		position: relative;
+		z-index: 64;
+		width: 84%;
+		max-width: $modal-width * 1.20;
+		background: $white;
+		margin: 64px auto;
+		padding: 8px;
+
+		.inner {
+			padding: 16px;
+			max-width: $modal-width;
+			margin: auto;
+
+			.head {
+				padding: 16px;
+			}
+
+			.content {
+				width: 100%;
+				overflow: hidden;
+				.experience {
+					padding: 16px;
+				}
+			}
+		}
+
+		.button-close {
+			position: absolute;
+			right: 0;
+			top: 0;
+			padding: 16px;
+			-webkit-transform: translate(50%, -50%);
+			transform: translate(50%, -50%);
+			z-index: 128;
+			border-radius: 50%;
+			height: 40px;
+			width: 40px;
+			background: $white;
+			box-shadow: $shadow;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $black;
+			font-size: 20px;
+			cursor: pointer;
+		}
+	}
+}
