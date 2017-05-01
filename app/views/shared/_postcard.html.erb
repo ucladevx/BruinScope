@@ -12,6 +12,11 @@
     <%= link_to main_app.post_path(post.id), class: "postcard", remote: true do %>
       <h3> <%= post.title %> </h3>
     <% end %>
-    <p> <%= post.body %> </h3>
+		<h4> Interview Experience </h4>
+		<p> <%= post.experience %> </p>
+		<% unless post.question.nil? %>
+			<h4> Interview Questions </h4>
+			<p> <%= post.question %> </p>
+		<% end %>
   </div>
 <% end %>

@@ -19,18 +19,20 @@
     <div class="inner">
       <div class="head">
         <h1 class="title">
-					<% unless post.title.nil? %>
-            <%= post.title %>
-          <% end %>
+          <%= post.title %>
         </h1>
       </div>
       <div class="content">
         <div class="experience">
-          <% unless post.body.nil?  %>
-						<h3> Experience </h3>
-            <%= post.body %>
-          <% end %>
+					<h3> Experience </h3>
+            <%= post.experience %>
         </div>
+				<div class="experience">
+					<% unless post.question.nil? %>
+						<h3> Question </h3>
+						<%= post.question %>
+					<% end %>
+				</div>
       </div>
     </div>
   </div>

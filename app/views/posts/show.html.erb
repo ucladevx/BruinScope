@@ -7,7 +7,13 @@
 
 <p>
   <strong>Experience:</strong>
-  <%= @post.body %>
+  <%= @post.experience %>
+</p>
+<p>
+  <strong>Question:</strong>
+	<% unless @post.question.nil? %>
+		<%= @post.question %>
+	<% end %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
