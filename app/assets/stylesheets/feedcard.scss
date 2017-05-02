@@ -36,15 +36,18 @@ h2{
  .company-info{
      color: #B1B1B1;
      font-weight: 700;
+     font-size: 12px;
  }
- .position-info{
+ .secondary-info{
      color: #B1B1B1;
      font-weight: 400;
+     font-size: 12px;
  }
  .tiny-company-icon{
      width: 20px;
      height: auto;
      margin-right: 10px;
+     display: inline-block;
  }
  .upvote-btn{
      width: 65px;
@@ -72,3 +75,17 @@ h2{
      line-height: 25px;
      font-size: 14px;
  }
+
+ h3{
+   font-size: 20px;
+   font-weight: 700;
+   color: #53575A;
+   margin-top: 14px;
+   margin-bottom: 0;
+ }
+h4{
+  font-size: 14px;
+  font-weight: 700;
+  color: #53575A;
+  margin-bottom: 0;
+}
