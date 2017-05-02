@@ -12,3 +12,9 @@ function createNewPost(e){
   e.preventDefault();
   showModal('newpostmodal');
 }
+
+$(document).ready(function(){
+    $('a#upvote').click(function(){
+        $(this).toggleClass("upvote-btn-clicked");
+    });
+});
