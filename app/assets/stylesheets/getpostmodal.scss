@@ -5,7 +5,7 @@ body.locked {
 	overflow: hidden;
 }
 
-.getpostmodal {
+.postmodal {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -28,7 +28,7 @@ body.locked {
 		background: rgba(0,0,0,0.5);
 	}
 
-	.getpostcard {
+	.modalcard {
 		position: relative;
 		z-index: 64;
 		width: 84%;
