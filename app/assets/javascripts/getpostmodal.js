@@ -16,5 +16,6 @@ function createNewPost(e){
 $(document).ready(function(){
     $('a#upvote').click(function(){
         $(this).toggleClass("upvote-btn-clicked");
+        $('#upvote-btn-line').toggleClass("upvote-btn-line-clicked");
     });
 });

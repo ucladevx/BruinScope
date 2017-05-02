@@ -81,7 +81,7 @@ h2{
    color: #FF6376;
  }
 
- .upvote-btn-line{
+ #upvote-btn-line{
      margin-top: 7.5px;
      margin-bottom: 7.5px;
      height: 10px;
@@ -91,7 +91,7 @@ h2{
      vertical-align: top;
  }
  .upvote-btn-line-clicked{
-   background-color: white;
+   background-color: white !important;
  }
  .btn-text{
    font-size: 12px;
