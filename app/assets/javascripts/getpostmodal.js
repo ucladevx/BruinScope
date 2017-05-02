@@ -9,7 +9,6 @@ function hideModal(modalClass){
 }
 
 function createNewPost(e){
-  console.log('aayyy');
   e.preventDefault();
   showModal('newpostmodal');
 }
