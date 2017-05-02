@@ -3,6 +3,12 @@
 
 company_list = [
 	[ "Facebook", "Menlo Park, CA" ],
+	[ "Amazon", "Seattle, WA"],
+	[ "LinkedIn", "Sunnyvale, CA"],
+	[ "Palantir", "Palo Alto, CA"],
+	[ "Snap", "Los Angeles, CA"],
+	[ "Stripe", "San Francisco, CA"],
+	[ "Twitter", "San Francisco, CA"],
 	[ "Google", "Mountain View, CA" ],
 	[ "Uber", "San Francisco, CA" ],
 	[ "Microsoft", "Redmond, WA" ],
