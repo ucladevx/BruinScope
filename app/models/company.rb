@@ -8,7 +8,7 @@ class Company < ApplicationRecord
 
 	private
 		def set_image
-			image_path = ActionController::Base.helpers.asset_path("#{self.name}.png")
+			image_path = ActionController::Base.helpers.asset_path("#{self.name.downcase}.png")
 			self.image = image_path.nil? ? "" : image_path
 		end
 end

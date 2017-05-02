@@ -7,4 +7,11 @@
 	override the post based on the id from the GET request -->
 	<%= render partial: 'shared/getpostmodal', locals: {post: nil} %>
 </div>
-<%= render 'shared/feedcard', locals: {posts: @posts} %>
+<div class="home-cards-container">
+    <div class="card-fixed">
+        <%= render 'shared/hotcompaniescard'%>
+    </div>
+    <div>
+        <%= render 'shared/feedcard', locals: {posts: @posts} %>
+    </div>
+</div>
