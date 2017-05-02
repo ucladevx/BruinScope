@@ -6,7 +6,9 @@
           <a class="position-info">Software Engineering Internship</a>
       </div>
       <a class="upvote-btn text-center">
-          <i class="fa fa-arrow-circle-o-up"></i>&nbsp <div class="upvote-btn-line"></div> <span>&nbsp+ 10</span>
+          <%= link_to upvote_posts_path(post.id), :remote => true do %>
+            <i class="fa fa-arrow-circle-o-up"></i>&nbsp <div class="upvote-btn-line"></div> <span>&nbsp+ <%= post.get_upvotes.size %></span>
+          <% end %>
       </a>
     </div>
     <%= link_to main_app.post_path(post.id), class: "postcard", remote: true do %>

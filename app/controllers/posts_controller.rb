@@ -40,6 +40,25 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def upvote
+    # Get the post id from the URL params
+    @post = Post.find(params[:format])
+    @user = current_user
+    if @user.present?
+      if !(@user.voted_for? @post)
+        @post.liked_by current_user
+      else
+        @post.unliked_by current_user
+      end
+      respond_to do |format|
+        format.js { render json: @post }
+      end
+    else
+      puts "\n\n\n\n"
+      puts "Not logged in."
+    end
+  end
+
   def update
     respond_to do |format|
       if @post.update(post_params)
