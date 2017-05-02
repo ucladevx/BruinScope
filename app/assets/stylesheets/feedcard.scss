@@ -47,23 +47,28 @@ h2{
      margin-right: 10px;
  }
  .upvote-btn{
-     width: 73px;
-     height: 28px;
-     border-radius: 5px;
+     width: 65px;
+     height: 25px;
+     border-radius: 4px;
      box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12);
      color: #FF6376;
      font-weight: 700;
  }
  .upvote-btn-line{
-     margin-top: 6px;
-     margin-bottom: 6px;
-     height: 16px;
+     margin-top: 7.5px;
+     margin-bottom: 7.5px;
+     height: 10px;
      width: 1px;
      background-color: #DDDDDD;
      display: inline-block;
      vertical-align: top;
  }
+ .btn-text{
+   font-size: 12px;
+   line-height: 25px;
+ }
+
  .fa-arrow-circle-o-up{
-     line-height: 28px;
-     font-size: 16px;
+     line-height: 25px;
+     font-size: 14px;
  }
