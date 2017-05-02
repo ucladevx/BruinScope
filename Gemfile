@@ -58,6 +58,10 @@ gem 'carrierwave', '~> 1.0'
 # Documentation: https://github.com/minimagick/minimagick
 gem 'mini_magick', '~> 4.5'
 
+# Voting system for posts
+# Documentation: https://github.com/ryanto/acts_as_votable
+gem 'acts_as_votable', '~> 0.10.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
