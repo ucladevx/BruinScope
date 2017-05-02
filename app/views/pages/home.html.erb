@@ -11,9 +11,9 @@
 </div>
 <div class="home-cards-container">
     <div class="card-fixed">
-        <%= render 'shared/hotcompaniescard'%>
+			<%= render partial: 'shared/hotcompaniescard', locals: {companies: @companies} %>
     </div>
     <div>
-        <%= render 'shared/feedcard', locals: {posts: @posts} %>
+        <%= render partial: 'shared/feedcard', locals: {posts: @posts} %>
     </div>
 </div>
