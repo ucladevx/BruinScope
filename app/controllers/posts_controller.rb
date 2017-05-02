@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     @post = Post.new
     respond_to do |format|
     	format.html
+      format.js # This will invoke show.js.erb that should be in the views/posts/ folder and will have acess to @post
 		end
   end
 

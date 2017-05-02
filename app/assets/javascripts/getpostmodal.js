@@ -7,3 +7,8 @@ function hideModal(modalClass){
 	$('body').removeClass('locked');
 	$('.' + modalClass).addClass('yhide');
 }
+
+function createNewPost(e){
+  e.preventDefault();
+  showModal('newpostmodal');
+}
