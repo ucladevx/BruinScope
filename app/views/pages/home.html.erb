@@ -5,7 +5,9 @@
 <!--- We are passing a variable for the partial to then be able to use throughout its code
 	and note that the only reason we are passing the first post by default so then we can
 	override the post based on the id from the GET request -->
-	<%= render partial: 'shared/getpostmodal', locals: {post: nil} %>
+
+<!-- by default, in the modal show the new post partial -->
+	<%= render template:'posts/new', locals: {post: nil} %>
 </div>
 <div class="home-cards-container">
     <div class="card-fixed">

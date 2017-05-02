@@ -3,9 +3,11 @@
         Trending
     </h1>
     <div class="line-divider add-your-experience-divider"></div>
-    <%= link_to main_app.new_post_path, class: "no-style", remote: true do %>
+    <%= link_to main_app.new_post_path, remote: true do %>
       <h2 class="trending-card-input">Add your experience...</h2>
-		<% end %>
+    <% end %>
+    <!-- <a class="new-post-button" onClick="createNewPost(event)">
+		</a> -->
     <div class="line-divider add-your-experience-divider" style="margin-bottom: 40px !important;"></div>
     <div style="height: 1000px;">
       <%= render partial: 'shared/postslist', locals: {posts: @posts} %>
