@@ -30,10 +30,11 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
+        @post_json = JSON::parse(@post.to_json).merge({url: post_url(@post)})
+        format.js { render json: @post_json, content_type: 'application/json' }
       else
         format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.js { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end

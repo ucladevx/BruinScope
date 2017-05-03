@@ -27,3 +27,11 @@ h2{
     font-weight: 700;
     margin: 0;
 }
+.alert {
+  position: fixed;
+  width: 100%;
+  top: 50px;
+}
+.alert.hidden {
+  display: none;
+}

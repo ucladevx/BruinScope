@@ -14,11 +14,12 @@
 	</head>
 
 	<body style="background-color: #F4F4F4;">
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-
 		<!-- Nav Bar-->
 		<%= render partial: 'shared/navbar' %>
+    <div class="alert hidden alert-dismissable">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <p class="alert-content"></p>
+    </div>
 		<%= yield %>
 	</body>
 </html>
