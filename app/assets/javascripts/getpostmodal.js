@@ -27,7 +27,6 @@ function createNewPost(e){
 
 function onNewPostSuccessHandler(event, data, status, xhr) {
   hideModal('newpostmodal');
-  console.log(xhr);
   var newPostLink = "<a href='" + xhr.responseJSON.url + "'>View it here</a>.";
   flashSuccessMessage('<strong>Woot!</strong> Successfully created Experience! ' + newPostLink);
 }
