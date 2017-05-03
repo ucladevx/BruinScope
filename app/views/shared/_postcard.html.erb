@@ -1,26 +1,28 @@
 <% if post %>
-  <div class="post">
-    <div class="first-experience-line">
-      <div style="line-height: 25px;">
-          <img class="tiny-company-icon" src="assets/facebook.png"><a class="company-info">Facebook</a> &nbsp·&nbsp
-          <a class="secondary-info">Software Engineering Internship</a>
-      </div>
-        <%= link_to post_upvote_path(post.id), :id => "upvote", :class => "upvote-btn text-center no-style", :remote => true do %>
-          <i class="fa fa-arrow-circle-o-up"></i>&nbsp <div id="upvote-btn-line"></div> <span class="upvote-value btn-text">&nbsp+ <%= post.get_upvotes.size %></span>
-        <% end %>
-    </div>
-    <%= link_to main_app.post_path(post.id), class: "postcard", remote: true do %>
-    <h3> <%= post.title %> </h3>
-    <% end %>
-        <div class="secondary-info">
-            Written by Shivam Thapar on Sep 14, 2016 &nbsp·&nbsp ✓Offer &nbsp·&nbsp Difficult Interview
+  <div class="post card-element">
+      <div class="inner-card-element">
+        <div class="first-experience-line">
+          <div style="line-height: 25px;">
+              <img class="tiny-company-icon" src="assets/facebook.png"><a class="company-info">Facebook</a> &nbsp·&nbsp
+              <a class="secondary-info">Software Engineering Internship</a>
+          </div>
+            <%= link_to post_upvote_path(post.id), :id => "upvote", :class => "upvote-btn text-center no-style", :remote => true do %>
+              <i class="fa fa-arrow-circle-o-up"></i>&nbsp <div id="upvote-btn-line"></div> <span class="upvote-value btn-text">&nbsp+ <%= post.get_upvotes.size %></span>
+            <% end %>
         </div>
-		<h4> Interview Experience </h4>
-		<p> <%= post.experience %> </p>
-		<% unless post.question.nil? %>
-			<h4> Interview Questions </h4>
-			<p> <%= post.question %> </p>
-		<% end %>
-		<div class="line-divider"></div>
+        <%= link_to main_app.post_path(post.id), class: "postcard", remote: true do %>
+        <h3 class="postcard-tiny-spacing"> <%= post.title %> </h3>
+        <% end %>
+            <div class="secondary-info postcard-big-spacing">
+                Written by Shivam Thapar on Sep 14, 2016 &nbsp·&nbsp ✓Offer &nbsp·&nbsp Difficult Interview
+            </div>
+            <h4> Interview Experience </h4>
+            <p class="postcard-small-spacing"> <%= post.experience %> </p>
+            <% unless post.question.nil? %>
+                <h4> Interview Questions </h4>
+                <p> <%= post.question %> </p>
+            <% end %>
+      </div>
   </div>
+  <div class="line-divider"></div>
 <% end %>

@@ -10,8 +10,6 @@ h2{
      height: 1px;
      background-color: #DCE0E0;
      width: 550px;
-     margin-bottom: 40px;
-     margin-top: 40px;
  }
  .add-your-experience-divider{
      margin-bottom: 0 !important;
@@ -60,10 +58,11 @@ h2{
      -moz-transition: all 0.3s;
      -o-transition: all 0.3s;
      transition: all 0.3s;
+     background-color: white;
  }
 
  .upvote-btn-clicked{
-   background-color: #FF6376;
+   background-color: #FF6376 !important;
    color: white !important;
  }
 
@@ -75,6 +74,10 @@ h2{
    transition: all 0.3s;
    cursor: pointer;
  }
+
+.upvote-btn:active, .upvote-btn:focus {
+  color: #FF6376;
+}
 
  .first-experience-line > a:hover{
    text-decoration: none;
@@ -115,4 +118,40 @@ h4{
   font-weight: 700;
   color: #53575A;
   margin-bottom: 0;
+  padding: 0;
+}
+.postcard-big-spacing{
+  padding-bottom: 18px;
+}
+.postcard-small-spacing{
+  padding-bottom: 10px;
+}
+.postcard-tiny-spacing{
+  padding-bottom: 2px;
+}
+
+.card-element{
+  padding-bottom: 45px;
+  padding-top: 45px;
+  margin-left: -45px;
+  margin-right: -45px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.card-element:hover {
+  //margin-top: 100px;
+  //margin-bottom: 100px;
+  background-color: rgba(54, 145, 168, .08);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.inner-card-element{
+  padding-left: 45px;
+  padding-right: 45px;
 }
