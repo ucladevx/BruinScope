@@ -42,6 +42,7 @@ GEM
       activerecord (>= 4.0)
       activesupport (>= 4.0)
       awesome_nested_set (>= 3.0)
+    acts_as_votable (0.10.0)
     arel (7.1.4)
     awesome_nested_set (3.1.1)
       activerecord (>= 4.0.0, < 5.1)
@@ -202,6 +203,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_commentable_with_threading (~> 2.0.1)
+  acts_as_votable (~> 0.10.0)
   byebug
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)

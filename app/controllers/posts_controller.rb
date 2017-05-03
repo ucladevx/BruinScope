@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     # Respond to a remote call (AJAX) with some javascript
     respond_to do |format|
       format.html # This will invoke show.html.erb
-      format.js # This will invoke show.js.erb that should be in the views/posts/ folder and will have acess to @post
+      format.js # This will invoke show.js.erb that should be in the views/posts/ folder and will have access to @post
     end
   end
 
@@ -40,6 +40,28 @@ class PostsController < ApplicationController
   end
 
   def edit
+  end
+
+  def upvote
+    # Get the post id from the URL params
+    @post = Post.find(params[:post_id])
+    @user = current_user
+    if @user.present?
+      if !(@user.voted_for? @post)
+        @post.liked_by current_user
+      else
+        @post.unliked_by current_user
+      end
+      respond_to do |format|
+        # add in upvote value to json
+        @post_json = JSON::parse(@post.to_json).merge({upvote: @post.votes_for.size})
+        # post json to page let EventHandler handle
+        format.js { render json: @post_json, content_type: 'application/json' }
+      end
+    else
+      puts "\n\n\n\n"
+      puts "Not logged in."
+    end
   end
 
   def update
