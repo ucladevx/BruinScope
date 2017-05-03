@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
   def upvote
     # Get the post id from the URL params
-    @post = Post.find(params[:format])
+    @post = Post.find(params[:post_id])
     @user = current_user
     if @user.present?
       if !(@user.voted_for? @post)
@@ -51,7 +51,10 @@ class PostsController < ApplicationController
         @post.unliked_by current_user
       end
       respond_to do |format|
-        format.js { render json: @post }
+        # add in upvote value to json
+        @post_json = JSON::parse(@post.to_json).merge({upvote: @post.votes_for.size})
+        # post json to page let EventHandler handle
+        format.js { render json: @post_json, content_type: 'application/json' }
       end
     else
       puts "\n\n\n\n"
