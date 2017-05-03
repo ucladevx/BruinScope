@@ -5,7 +5,7 @@
           <img class="tiny-company-icon" src="assets/facebook.png"><a class="company-info">Facebook</a> &nbsp·&nbsp
           <a class="secondary-info">Software Engineering Internship</a>
       </div>
-        <%= link_to post_upvote_path(post.id), :id => "upvote", :class => "upvote-btn text-center", :remote => true do %>
+        <%= link_to post_upvote_path(post.id), :id => "upvote", :class => "upvote-btn text-center no-style", :remote => true do %>
           <i class="fa fa-arrow-circle-o-up"></i>&nbsp <div id="upvote-btn-line"></div> <span class="upvote-value btn-text">&nbsp+ <%= post.get_upvotes.size %></span>
         <% end %>
     </div>

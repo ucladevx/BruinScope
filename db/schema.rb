@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170502054700) do
     t.datetime "updated_at", null: false
     t.boolean  "offer"
     t.text     "resources"
+    t.integer  "role"
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
