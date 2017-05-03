@@ -1,0 +1,17 @@
+<div class="card hot-companies-card">
+    <h1>
+        Hot Companies
+    </h1>
+    <section id="pattern" class="pattern">
+        <ul class="grid">
+					<% companies.each do |company| %>
+						<li>
+							<div>
+								<%= image_tag company.image, class: "hot-companies-icon" %>
+							</div>
+						</li>
+					<% end %>
+        </ul>
+    </section>
+    <a class="default-link bottom-of-card-link">More</a>
+</div>

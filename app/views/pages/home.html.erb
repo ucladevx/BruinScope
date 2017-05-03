@@ -9,4 +9,11 @@
 <!-- by default, in the modal show the new post partial -->
 	<%= render template:'posts/new', locals: {post: nil} %>
 </div>
-<%= render 'shared/feedcard', locals: {posts: @posts} %>
+<div class="home-cards-container">
+    <div class="card-fixed">
+			<%= render partial: 'shared/hotcompaniescard', locals: {companies: @companies} %>
+    </div>
+    <div>
+        <%= render partial: 'shared/feedcard', locals: {posts: @posts} %>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+.card{
+  box-shadow: 0 2px 7px 0 rgba(0,0,0,0.12);
+  padding-left: 45px;
+  padding-right: 45px;
+  background-color: white;
+}
+.hot-companies-card{
+  width: 230px;
+}
+h1{
+  font-size: 16px;
+  color: #53575A;
+  padding-top: 45px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+.hot-companies-icon{
+  width: 100%;
+  height: auto;
+}
+.hot-companies-icon:hover{
+  cursor: pointer;
+}
+.hot-companies-icons-row{
+  padding-top: 15px;
+}
+a.default-link{
+  font-size: 12px;
+  font-weight: 600 !important;
+  color: #3691A8;
+  display: block!important;
+}
+.bottom-of-card-link{
+  padding-bottom: 45px;
+  padding-top: 25px;
+}
+.hot-companies-icons-row > .col-xs-4{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.card > .row{
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.grid {
+  overflow: hidden;
+  padding: 0 0 0 0;
+  margin-left: -10px;
+  margin-right: -10px;
+
+}
+.grid li {
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 33.3333%;
+  float: left;
+  list-style-type: none;
+}
+.grid li > div {
+  padding: 0px 0px 0px 0px;
+  text-align: center;
+}
+.grid li a {
+  color: #fff;
+}
