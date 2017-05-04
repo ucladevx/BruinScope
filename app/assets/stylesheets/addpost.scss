@@ -17,14 +17,34 @@ h5{
   background-color: #DCE0E0;
   width: 100%;
 }
+
+.modal-line-vertical-divider{
+  height: 75px;
+  background-color: #DCE0E0;
+  width: 1px;
+}
 .modal-input{
   border: none;
   box-shadow: none;
   width: 100%;
+  max-width: 100%;
   font-size: 16px;
   color: #53575A;
   padding-bottom: 15px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+
  }
+.modal-input-big-description{
+  height: 250px;
+}
+.modal-input-medium-description{
+  height: 150px;
+}
+.modal-input-small-description{
+  height: 100px;
+}
 .modal-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #D3D3D3;
 }
@@ -36,4 +56,23 @@ h5{
 }
 .modal-input:-moz-placeholder { /* Firefox 18- */
   color: #D3D3D3;
+}
+.button{
+  width: 110.5px;
+  height: 42.5px;
+  border-radius: 4px;
+  color: white;
+  background-color: #FF6376;
+  font-size: 16px;
+  border: none;
+  font-weight: 700;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top: 15px;
+}
+.button:hover{
+  background-color: rgba(255, 99, 118, .8);
+  cursor: pointer;
 }

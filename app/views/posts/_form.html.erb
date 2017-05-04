@@ -3,14 +3,35 @@
     <h4 class="modal-page-num">Page 1 of 2</h4>
     <h3 class="modal-title">Share your recruiting experience</h3>
     <div class="modal-line-divider"></div>
+    <div style="display: flex;">
+        <div style="width:42%;">
+            <h5>Company</h5>
+            <%= f.text_field :title, class: 'modal-input', autofocus: true, required: true,
+                      placeholder: "What's the company's name?" %>
+        </div>
+        <div class="modal-line-vertical-divider"></div>
+        <div style="width:58%; padding-left: 15px;">
+            <h5>Position</h5>
+            <%= f.text_field :title, class: 'modal-input', autofocus: true, required: true,
+                      placeholder: "What role did you interview for?" %>
+        </div>
+    </div>
+    <div class="modal-line-divider"></div>
     <h5>Experience Title</h5>
     <%= f.text_field :title, class: 'modal-input', autofocus: true, required: true,
           placeholder: 'How would you title your interview and recruiting experience?' %>
     <div class="modal-line-divider"></div>
-      <!--<%= f.text_area :experience, class: 'form-control', autofocus: true, required: true,
-          placeholder: 'Enter relevant interview experience' %>
-	  <%= f.text_area :question, class: 'form-control', autofocus: true, placeholder: 'Enter relevant interview questions' %>-->
+    <h5>Experience Description</h5>
+    <%= f.text_area :experience, class: 'modal-input modal-input-big-description', autofocus: true, required: true,
+          placeholder: 'How would you describe your interview and recruiting experience?' %>
+	<div class="modal-line-divider"></div>
+	<h5>Interview Questions</h5>
+	<%= f.text_area :question, class: 'modal-input modal-input-medium-description', autofocus: true, placeholder: 'Enter relevant interview questions' %>
+    <div class="modal-line-divider"></div>
+    <h5>Unique Resources</h5>
+    <%= f.text_area :question, class: 'modal-input modal-input-small-description', autofocus: true, placeholder: 'What unique classes, books, and other materials were helpful for the interview preparation?' %>
+    <div class="modal-line-divider"></div>
   </div>
-  <!--<%= f.submit :post, class: 'btn btn-primary'%>-->
+  <%= f.submit :Next, class: 'button'%>
 <% end %>
 
