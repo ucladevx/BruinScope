@@ -29,6 +29,8 @@ body.locked {
 	}
 
 	.modalcard {
+		box-shadow: 0 0 4px 0 rgba(0,0,0,0.25);
+		border-radius: 5px;
 		position: relative;
 		z-index: 64;
 		width: 84%;
@@ -38,7 +40,7 @@ body.locked {
 		padding: 8px;
 
 		.inner {
-			padding: 16px;
+			padding: 40px;
 			max-width: $modal-width;
 			margin: auto;
 
