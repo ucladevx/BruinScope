@@ -133,23 +133,26 @@ h4{
 .card-element{
   padding-bottom: 45px;
   padding-top: 45px;
-  margin-left: -45px;
-  margin-right: -45px;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  margin-left: -44px;
+  margin-right: -44px;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  outline:1px solid transparent;
 }
 
 .card-element:hover {
   //margin-top: 100px;
   //margin-bottom: 100px;
-  background-color: rgba(54, 145, 168, .08);
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  background-color: #EFF7F8;
+  outline:1px solid #EFF7F8;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
   cursor: pointer;
+  z-index: 1000;
 }
 .inner-card-element{
   padding-left: 45px;
