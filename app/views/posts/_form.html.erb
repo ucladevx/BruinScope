@@ -31,8 +31,73 @@
     <h5>Unique Resources</h5>
     <%= f.text_area :question, class: 'modal-input modal-input-small-description', autofocus: true, placeholder: 'What unique classes, books, and other materials were helpful for the interview preparation?' %>
     <div class="modal-line-divider"></div>
+    <div class="button" id="next-button">Next</div>
   </div>
-  <div class="button" id="next-button">Next</div>
-  <div id="step-2">sdflkjsdlfk sdjlfkj sdlkfj sdlkfj</div>
+  <div id="step-2">
+    <h4 class="modal-page-num">Page 2 of 2</h4>
+    <h3 class="modal-title">Share your recruiting experience</h3>
+    <div class="modal-line-divider"></div>
+    <h5>How difficult was the interview?</h5>
+    <div style="display: flex;">
+        <div class="select-container">
+            <input type="radio" id="r1" name="rr" />
+            <label for="r1"><span></span>Easy</label>
+        </div>
+        <div class="select-container">
+            <input type="radio" id="r2" name="rr" />
+            <label for="r2"><span></span>Average</label>
+        </div>
+        <div class="select-container">
+                    <input type="radio" id="r3" name="rr" />
+                    <label for="r3"><span></span>Difficult</label>
+                </div>
+    </div>
+    <div class="modal-line-divider"></div>
+    <h5>Did you receive an offer?</h5>
+    <div style="display: flex;">
+        <div class="select-container">
+            <input type="radio" id="r4" name="kk" />
+            <label for="r4"><span></span>Yes; Accepted</label>
+        </div>
+        <div class="select-container">
+            <input type="radio" id="r5" name="kk" />
+            <label for="r5"><span></span>Yes; Declined</label>
+        </div>
+        <div class="select-container">
+                    <input type="radio" id="r6" name="kk" />
+                    <label for="r6"><span></span>No</label>
+                </div>
+    </div>
+    <div class="modal-line-divider"></div>
+    <h5>What would you say the position you interviewed for was most similar to?</h5>
+    <div style="display: flex;">
+        <div class="select-container">
+            <input type="radio" id="r7" name="ll" />
+            <label for="r7"><span></span>Software Engineering</label>
+        </div>
+        <div class="select-container">
+            <input type="radio" id="r8" name="ll" />
+            <label for="r8"><span></span>Product Management</label>
+        </div>
+        <div class="select-container">
+            <input type="radio" id="r9" name="ll" />
+            <label for="r9"><span></span>Product Design</label>
+        </div>
+        <div class="select-container">
+            <input type="radio" id="r10" name="ll" />
+            <label for="r10"><span></span>Data Science</label>
+        </div>
+    </div>
+    <div class="modal-line-divider"></div>
+    <h5>Would you like this post to be anonymous?</h5>
+    <div style="display: flex;">
+        <div class="select-container">
+            <input type="checkbox" id="r11" name="aa" />
+            <label for="r11"><span></span>Yes, I would like to post this anonymously.</label>
+        </div>
+    </div>
+    <div class="modal-line-divider"></div>
+    <div class="button" id="next-button">Post</div>
+  </div>
 <% end %>
 
