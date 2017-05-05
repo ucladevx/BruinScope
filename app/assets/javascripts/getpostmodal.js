@@ -49,9 +49,16 @@ $(document).on("click", ".close", function(e){
   });
 });
 
+$(document).on("click", "#next-button", function(e){
+    $('#step-1').fadeOut(200, function(){
+        $('#step-2').fadeIn(200);
+    });
+});
+
 $(document).ready(function(){
     $('a#upvote').click(function(){
         $(this).toggleClass("upvote-btn-clicked");
         $('#upvote-btn-line').toggleClass("upvote-btn-line-clicked");
     });
+
 });

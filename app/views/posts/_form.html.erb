@@ -1,16 +1,16 @@
 <%= form_for(@post, remote: true, html: {id: "new-post-form"}) do |f| %>
-  <div class="form-group">
+  <div id="step-1" class="form-group">
     <h4 class="modal-page-num">Page 1 of 2</h4>
     <h3 class="modal-title">Share your recruiting experience</h3>
     <div class="modal-line-divider"></div>
-    <div style="display: flex;">
-        <div style="width:42%;">
+    <div style="display:flex;">
+        <div class="small-column">
             <h5>Company</h5>
             <%= f.text_field :title, class: 'modal-input', autofocus: true, required: true,
                       placeholder: "What's the company's name?" %>
         </div>
         <div class="modal-line-vertical-divider"></div>
-        <div style="width:58%; padding-left: 15px;">
+        <div class="big-column">
             <h5>Position</h5>
             <%= f.text_field :title, class: 'modal-input', autofocus: true, required: true,
                       placeholder: "What role did you interview for?" %>
@@ -32,6 +32,7 @@
     <%= f.text_area :question, class: 'modal-input modal-input-small-description', autofocus: true, placeholder: 'What unique classes, books, and other materials were helpful for the interview preparation?' %>
     <div class="modal-line-divider"></div>
   </div>
-  <%= f.submit :Next, class: 'button'%>
+  <div class="button" id="next-button">Next</div>
+  <div id="step-2">sdflkjsdlfk sdjlfkj sdlkfj sdlkfj</div>
 <% end %>
 
