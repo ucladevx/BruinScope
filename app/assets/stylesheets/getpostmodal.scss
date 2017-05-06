@@ -62,10 +62,10 @@ body.locked {
 		}
 
 		.button-close {
-			position: absolute;
-			right: 0;
+			position: fixed;
 			top: 0;
-			padding: 16px;
+			right: 0;
+			padding: 10px;
 			-webkit-transform: translate(50%, -50%);
 			transform: translate(50%, -50%);
 			z-index: 128;
@@ -73,13 +73,55 @@ body.locked {
 			height: 40px;
 			width: 40px;
 			background: $white;
-			box-shadow: $shadow;
+			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			color: $black;
 			font-size: 20px;
 			cursor: pointer;
+			-webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
+		}
+		.button-close:hover {
+			box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.3);
+		}
+		.close {
+			position: relative;
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			overflow: hidden;
+			opacity: 1;
+		}
+		.close::before, .close::after {
+			content: '';
+			position: absolute;
+			height: 2px;
+			width: 100%;
+			top: 50%;
+			left: 0;
+			margin-top: -1px;
+			background: #B1B1B1;
+		}
+		.close::before {
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+		.close::after {
+			-webkit-transform: rotate(-45deg);
+			-moz-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			-o-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+		.close.hairline::before, .close.hairline::after {
+			height: 1px;
 		}
 	}
 }
