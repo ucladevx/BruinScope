@@ -17,7 +17,6 @@ body.locked {
 	&.yhide{
 		display: none;
 	}
-
 	.overlay {
 		position: fixed;
 		z-index: 32;
@@ -62,9 +61,10 @@ body.locked {
 		}
 
 		.button-close {
-			position: fixed;
-			top: 0;
-			right: 0;
+			position: absolute;
+			right: -20px;
+			top: 12px;
+			//right: -800px;
 			padding: 10px;
 			-webkit-transform: translate(50%, -50%);
 			transform: translate(50%, -50%);
@@ -87,6 +87,12 @@ body.locked {
 		}
 		.button-close:hover {
 			box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.3);
+		}
+		@media screen and (max-width: 768px) {
+			.button-close {
+				right: 7px;
+				top: -7px;
+			}
 		}
 		.close {
 			position: relative;
