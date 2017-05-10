@@ -12,8 +12,10 @@
   <div class="overlay" onclick="hideModal('postview')">
   </div>
   <div class="modalcard newpostcard">
+  <div style="position: fixed; width: 84%; max-width: 768px;">
     <div class="button-close" onclick="hideModal('postview')">
         <div class="close hairline"></div>
+    </div>
     </div>
     <div class="inner">
       <%= render partial: 'posts/form' %>
