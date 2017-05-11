@@ -12,27 +12,33 @@
 <div class="postmodal getpostmodal postview yhide">
   <div class="overlay" onclick="hideModal('postview')">
   </div>
+  <ul class="tabrow">
+        <li class="active">Experience</li>
+        <li>Questions</li>
+  </ul>
   <div class="modalcard">
-    <div class="button-close" onclick="hideModal('postview')">
-      <i aria-hidden="true">X</i>
+    <div class="button-close-container">
+        <div class="button-close" onclick="hideModal('postview')">
+          <div class="close hairline"></div>
+        </div>
     </div>
     <div class="inner">
       <div class="head">
-        <h1 class="title">
+        <h3 class="big">
           <%= post.title %>
-        </h1>
+        </h3>
       </div>
       <div class="content">
         <div class="experience">
-					<h3> Experience </h3>
+
             <%= post.experience %>
         </div>
-				<div class="experience">
+				<!--<div class="experience">
 					<% unless post.question.nil? %>
 						<h3> Question </h3>
 						<%= post.question %>
 					<% end %>
-				</div>
+				</div>-->
       </div>
     </div>
   </div>
