@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502054700) do
+ActiveRecord::Schema.define(version: 20170511034916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,9 @@ ActiveRecord::Schema.define(version: 20170502054700) do
     t.boolean  "offer"
     t.text     "resources"
     t.integer  "role"
+    t.integer  "company_id"
+    t.string   "position"
+    t.index ["company_id"], name: "index_posts_on_company_id", using: :btree
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
@@ -74,5 +77,6 @@ ActiveRecord::Schema.define(version: 20170502054700) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
   end
 
+  add_foreign_key "posts", "companies"
   add_foreign_key "posts", "users"
 end

@@ -26,7 +26,40 @@ body.locked {
 		width: 100%;
 		background: rgba(0,0,0,0.5);
 	}
-
+	.tabrow {
+		text-align: center;
+		list-style: none;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		padding: 0;
+		line-height: 24px;
+		position: absolute;
+		top: 30px;
+		z-index: 65;
+	}
+	.tabrow li {
+		margin: 0 0;
+		padding-top: 7px;
+		padding-bottom: 15.5px;
+		padding-left: 25px;
+		padding-right: 25px;
+		background: #F4F4F4;
+		display: inline-block;
+		border-radius: 12px;
+		font-size: 12px;
+		letter-spacing: 2px;
+		font-weight: 600;
+		text-transform: uppercase;
+		z-index: -1;
+		color: rgba(51, 51, 51, .4);
+	}
+	.tabrow li.active{
+		background: white;
+		z-index: 100 !important;
+		color: rgba(51, 51, 51, 1);
+	}
 	.modalcard {
 		box-shadow: 0 0 4px 0 rgba(0,0,0,0.25);
 		border-radius: 5px;
@@ -87,6 +120,11 @@ body.locked {
 		}
 		.button-close:hover {
 			box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.3);
+		}
+		.button-close-container{
+			position: fixed;
+			width: 84%;
+			max-width: 768px;
 		}
 		@media screen and (max-width: 768px) {
 			.button-close {

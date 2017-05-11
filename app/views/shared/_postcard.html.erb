@@ -1,12 +1,15 @@
 <% if post %>
-  <div class="post card-element">
+  <div data-remote="true" class="post card-element">
       <div class="inner-card-element">
         <div class="first-experience-line">
           <div style="line-height: 25px;">
-              <img class="tiny-company-icon" src="assets/facebook.png"><a class="company-info">Facebook</a> &nbsp·&nbsp
-              <a class="secondary-info">Software Engineering Internship</a>
+              <% if post.company%>
+              <%= image_tag post.company.image, class: "tiny-company-icon" %><a class="company-info"><%= post.company.name %></a> &nbsp·&nbsp
+              <% end %>
+              <a class="secondary-info"><%= post.position %></a>
           </div>
-            <%= link_to post_upvote_path(post.id), :id => "upvote", :class => "upvote-btn text-center no-style", :remote => true do %>
+            <% @button_class = (current_user.voted_for? post)? "upvote-btn-clicked" : "" %>
+            <%= link_to post_upvote_path(post.id), :id => "upvote", :class => @button_class + " upvote-btn text-center no-style", :remote => true do %>
               <i class="fa fa-arrow-circle-o-up"></i>&nbsp <div id="upvote-btn-line"></div> <span class="upvote-value btn-text">&nbsp+ <%= post.get_upvotes.size %></span>
             <% end %>
         </div>
