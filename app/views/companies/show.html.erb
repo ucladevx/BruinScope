@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<h2 style="float: right"> <%= @company.name %> </h2>
+<div class="home-cards-container">
+    <div class="card-fixed">
+      <%= render partial: 'shared/hotcompaniescard', locals: {companies: Company.all} %>
+    </div>
+    <div>
+        <%= render partial: 'shared/feedcard', locals: {posts: @posts} %>
+    </div>
+</div>

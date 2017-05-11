@@ -4,28 +4,29 @@
         <div class="first-experience-line">
           <div style="line-height: 25px;">
               <% if post.company%>
-              <%= image_tag post.company.image, class: "tiny-company-icon" %><a class="company-info"><%= post.company.name %></a> &nbsp·&nbsp
-              <% end %>
-              <a class="secondary-info"><%= post.position %></a>
-          </div>
-            <% @button_class = (current_user.voted_for? post)? "upvote-btn-clicked" : "" %>
-            <%= link_to post_upvote_path(post.id), :id => "upvote", :class => @button_class + " upvote-btn text-center no-style", :remote => true do %>
-              <i class="fa fa-arrow-circle-o-up"></i>&nbsp <div id="upvote-btn-line"></div> <span class="upvote-value btn-text">&nbsp+ <%= post.get_upvotes.size %></span>
-            <% end %>
-        </div>
-        <%= link_to main_app.post_path(post.id), class: "postcard", remote: true do %>
-        <h3 class="postcard-tiny-spacing"> <%= post.title %> </h3>
-        <% end %>
-            <div class="secondary-info postcard-big-spacing">
-                Written by Shivam Thapar on Sep 14, 2016 &nbsp·&nbsp ✓Offer &nbsp·&nbsp Difficult Interview
-            </div>
-            <h4> Interview Experience </h4>
-            <p class="postcard-small-spacing"> <%= post.experience %> </p>
-            <% unless post.question.nil? %>
-                <h4> Interview Questions </h4>
-                <p> <%= post.question %> </p>
-            <% end %>
-      </div>
-  </div>
-  <div class="line-divider"></div>
+								<%= image_tag post.company.image, class: "tiny-company-icon" %>
+								<%= link_to post.company.name, main_app.company_path(post.company.id), class: "company-info"%>&nbsp·&nbsp
+							<% end %>
+							<a class="secondary-info"><%= post.position %></a>
+					</div>
+					<% @button_class = (current_user.voted_for? post)? "upvote-btn-clicked" : "" %>
+					<%= link_to post_upvote_path(post.id), :id => "upvote", :class => @button_class + " upvote-btn text-center no-style", :remote => true do %>
+						<i class="fa fa-arrow-circle-o-up"></i>&nbsp <div id="upvote-btn-line"></div> <span class="upvote-value btn-text">&nbsp+ <%= post.get_upvotes.size %></span>
+					<% end %>
+				</div>
+				<%= link_to main_app.post_path(post.id), class: "postcard", remote: true do %>
+					<h3 class="postcard-tiny-spacing"> <%= post.title %> </h3>
+				<% end %>
+				<div class="secondary-info postcard-big-spacing">
+					Written by Shivam Thapar on Sep 14, 2016 &nbsp·&nbsp ✓Offer &nbsp·&nbsp Difficult Interview
+				</div>
+				<h4> Interview Experience </h4>
+				<p class="postcard-small-spacing"> <%= post.experience %> </p>
+				<% unless post.question.nil? %>
+					<h4> Interview Questions </h4>
+					<p> <%= post.question %> </p>
+				<% end %>
+			</div>
+	</div>
+	<div class="line-divider"></div>
 <% end %>
