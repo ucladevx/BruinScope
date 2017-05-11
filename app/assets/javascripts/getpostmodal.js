@@ -55,11 +55,3 @@ $(document).on("click", "#next-button", function(e){
     });
     $('#mod').scrollTop(0);
 });
-
-$(document).ready(function(){
-    $('a#upvote').click(function(){
-        $(this).toggleClass("upvote-btn-clicked");
-        $('#upvote-btn-line').toggleClass("upvote-btn-line-clicked");
-    });
-
-});

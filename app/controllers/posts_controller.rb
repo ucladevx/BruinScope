@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def show
     # Get the post id from the URL params
     @post = Post.find(params[:id])
+
     # Respond to a remote call (AJAX) with some javascript
     respond_to do |format|
       format.html # This will invoke show.html.erb
@@ -19,7 +20,6 @@ class PostsController < ApplicationController
     @post = Post.new
     respond_to do |format|
     	format.html
-      format.js # This will invoke show.js.erb that should be in the views/posts/ folder and will have acess to @post
 		end
   end
 
@@ -30,11 +30,10 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        @post_json = JSON::parse(@post.to_json).merge({url: post_url(@post)})
-        format.js { render json: @post_json, content_type: 'application/json' }
+        format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
-        format.js { render json: @post.errors, status: :unprocessable_entity }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
