@@ -8,7 +8,8 @@
               <% end %>
               <a class="secondary-info"><%= post.position %></a>
           </div>
-            <%= link_to post_upvote_path(post.id), :id => "upvote", :class => "upvote-btn text-center no-style", :remote => true do %>
+            <% @button_class = (current_user.voted_for? post)? "upvote-btn-clicked" : "" %>
+            <%= link_to post_upvote_path(post.id), :id => "upvote", :class => @button_class + " upvote-btn text-center no-style", :remote => true do %>
               <i class="fa fa-arrow-circle-o-up"></i>&nbsp <div id="upvote-btn-line"></div> <span class="upvote-value btn-text">&nbsp+ <%= post.get_upvotes.size %></span>
             <% end %>
         </div>
