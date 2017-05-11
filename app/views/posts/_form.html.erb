@@ -1,4 +1,4 @@
-<%= form_for(@post, remote: true, html: {id: "new-post-form"}) do |f| %>
+<%= form_for(@post, remote: true, html: {id: "new-post-form", novalidate: 'novalidate'}) do |f| %>
   <div id="step-1" class="form-group">
     <h4 class="modal-page-num">Page 1 of 2</h4>
     <h3 class="modal-title">Share your recruiting experience</h3>
@@ -6,13 +6,13 @@
     <div style="display:flex;">
         <div class="small-column">
             <h5>Company</h5>
-            <%= f.text_field :title, class: 'modal-input', autofocus: true, required: true,
+            <%= text_field_tag :company_name, "", class: 'modal-input', autofocus: true, required: true,
                       placeholder: "What's the company's name?" %>
         </div>
         <div class="modal-line-vertical-divider"></div>
         <div class="big-column">
             <h5>Position</h5>
-            <%= f.text_field :title, class: 'modal-input', autofocus: true, required: true,
+            <%= f.text_field :position, class: 'modal-input', autofocus: true, required: true,
                       placeholder: "What role did you interview for?" %>
         </div>
     </div>
@@ -29,7 +29,7 @@
 	<%= f.text_area :question, class: 'modal-input modal-input-medium-description', autofocus: true, placeholder: 'Enter relevant interview questions' %>
     <div class="modal-line-divider"></div>
     <h5>Unique Resources</h5>
-    <%= f.text_area :question, class: 'modal-input modal-input-small-description', autofocus: true, placeholder: 'What unique classes, books, and other materials were helpful for the interview preparation?' %>
+    <%= f.text_area :resources, class: 'modal-input modal-input-small-description', autofocus: true, placeholder: 'What unique classes, books, and other materials were helpful for the interview preparation?' %>
     <div class="modal-line-divider"></div>
     <div class="button" id="next-button">Next</div>
   </div>
@@ -91,7 +91,6 @@
         </div>
     </div>
     <div class="modal-line-divider"></div>
-    <div class="button" id="next-button">Post</div>
+    <%= f.submit "Post", class: 'button', id: "next-button"%>
   </div>
 <% end %>
-
