@@ -11,11 +11,17 @@
 <% if post %>
 <div class="postmodal getpostmodal postview yhide">
   <div class="overlay" onclick="hideModal('postview')">
+
+  <div class="tab-container tab-container-active">
+    <div class="tab-active tab-element">Experience</div>
   </div>
-  <ul class="tabrow">
+  <div class="tab-container">
+    <div class="tab-element" style="margin-left: 50%;">Questions</div>
+  </div>
+  <!--<ul class="tabrow">
         <li class="active">Experience</li>
         <li>Questions</li>
-  </ul>
+  </ul>-->
   <div class="modalcard">
     <div class="button-close-container">
         <div class="button-close" onclick="hideModal('postview')">
@@ -24,9 +30,25 @@
     </div>
     <div class="inner">
       <div class="head">
+        <div class="first-experience-line">
+          <div style="line-height: 25px;">
+              <% if post.company%>
+                  <%= image_tag post.company.image, class: "tiny-company-icon" %>
+                  <%= link_to post.company.name, main_app.company_path(post.company.id), class: "company-info"%>&nbsp·&nbsp
+              <% end %>
+                <a class="secondary-info"><%= post.position %></a>
+          </div>
+          <% @button_class = (current_user.voted_for? post)? "upvote-btn-clicked" : "" %>
+          <%= link_to post_upvote_path(post.id), :id => "upvote", :class => @button_class + " upvote-btn text-center no-style", :remote => true do %>
+                <i class="fa fa-arrow-circle-o-up"></i>&nbsp <div id="upvote-btn-line"></div> <span class="upvote-value btn-text">&nbsp+ <%= post.get_upvotes.size %></span>
+          <% end %>
+        </div>
         <h3 class="big">
           <%= post.title %>
         </h3>
+        <div class="secondary-info postcard-big-spacing">
+            Written by Shivam Thapar on Sep 14, 2016 &nbsp·&nbsp ✓Offer &nbsp·&nbsp Difficult Interview
+        </div>
       </div>
       <div class="content">
         <div class="experience">
