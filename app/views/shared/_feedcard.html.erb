@@ -1,4 +1,6 @@
 <div class="card feed-card trending-card">
+
+    <% if !current_user.nil? %>
     <h1 style="margin-bottom: 15px;">
         Trending
     </h1>
@@ -14,4 +16,7 @@
 		<div>
 			<%= render partial: 'shared/postslist', locals: {posts: @posts} %>
 		</div>
+    <% else %>
+      <%= render partial: 'shared/not_logged_in' %>
+    <% end %>
 </div>
