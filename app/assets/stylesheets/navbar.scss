@@ -64,6 +64,7 @@ a.nav-img-parent{
 	font-size: 14px;
 	border-left: 1px solid rgba(255,255,255,0.14);
 	width: 400px;
+	/*white-space: nowrap !important;*/
 }
 .big-search-bar > ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 	color: white;
@@ -185,11 +186,33 @@ button:focus {
 	}
 	.navbar-nav>li {
 		float: inherit;
+		width: auto !important;
 	}
 	.collapse.in{
 		display:block !important;
 	}
 	.navbar-nav{
 		margin: 0 !important;
+		width: auto !important;
 	}
 }
+@media (max-width: 768px){
+	.navbar-nav{
+		display: inline-block;
+		position: absolute;
+	}
+	.navbar-nav>li {
+		display: inline-block;
+		/*position: absolute;*/
+	}
+}
+
+@media (max-width: 625px){
+	.navbar-nav>li {
+		display: inline-block;
+		position: absolute;
+	}
+}
+
+
+
