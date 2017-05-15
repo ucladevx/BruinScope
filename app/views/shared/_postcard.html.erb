@@ -2,10 +2,10 @@
   <div data-remote="true" class="post card-element">
       <div class="inner-card-element">
         <div class="first-experience-line">
-          <div style="line-height: 25px;">
+          <div style="line-height: 22px;">
               <% if post.company%>
                   <%= image_tag post.company.image, class: "tiny-company-icon" %>
-                  <%= link_to post.company.name, main_app.company_path(post.company.id), class: "company-info"%>&nbsp·&nbsp
+                  <%= link_to post.company.name, main_app.company_path(post.company.id), class: "company-info"%>  &nbsp·&nbsp
               <% end %>
                 <a class="secondary-info"><%= post.position %></a>
           </div>
