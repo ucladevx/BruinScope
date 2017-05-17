@@ -18,7 +18,7 @@
 					<h3 class="postcard-tiny-spacing"> <%= post.title %> </h3>
 				<% end %>
 				<div class="secondary-info postcard-big-spacing">
-					Written by <%= post.user.full_name %> on <%= post.created_at.strftime('%B %e, %Y') %> &nbsp·&nbsp ✓Offer &nbsp·&nbsp Difficult Interview
+					Written by <%= sanitized_user_name(post.user) %> on <%= post.created_at.strftime('%B %e, %Y') %> &nbsp·&nbsp <%= formatted_post_offer(post) %> &nbsp·&nbsp <%= formatted_post_diffculty(post) %>
 				</div>
 				<h4> Interview Experience </h4>
 				<p class="postcard-small-spacing"> <%= post.experience %> </p>

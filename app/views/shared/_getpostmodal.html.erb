@@ -47,7 +47,7 @@
           <%= post.title %>
         </h3>
         <div class="secondary-info postcard-big-spacing">
-            Written by Shivam Thapar on Sep 14, 2016 &nbsp·&nbsp ✓Offer &nbsp·&nbsp Difficult Interview
+            Written by <%= sanitized_user_name(post.user) %> on <%= post.created_at.strftime('%B %e, %Y') %> &nbsp·&nbsp <%= formatted_post_offer(post) %> &nbsp·&nbsp <%= formatted_post_diffculty(post) %>
         </div>
       </div>
       <div class="content">
