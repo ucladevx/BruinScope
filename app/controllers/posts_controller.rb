@@ -25,11 +25,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    print "COMPANY NAME"
-    print params[:company_name]
     @post = Post.new(post_params) do |post|
-      post.user = current_user
+      unless params.key?("anonymous")
+        post.user = current_user
+      end
       post.company = Company.where(name: params[:company_name]).first
+      post.role = params[:role]
+      post.difficulty = params[:difficulty]
+      post.offer = params[:offer]
     end
     respond_to do |format|
       if @post.save
@@ -100,6 +103,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :experience, :question, :company_name, :position, :resources)
+      params.require(:post).permit(:title, :experience, :question, :company_name, :position, :resources, :role, :difficulty, :offer, :anonymous)
     end
 end
