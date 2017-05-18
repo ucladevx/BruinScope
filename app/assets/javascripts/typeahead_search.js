@@ -36,4 +36,11 @@ $(document).ready(function() {
       }
     }
   });
+  $('.navbar-input').on("keypress", function(e) {
+    if (e.keyCode == 13) {
+      console.log(this);
+      document.location.href = '/search/' + this.value;
+      return false; // prevent the button click from happening
+    }
+  });
 })

@@ -9,15 +9,15 @@ class SearchController < ApplicationController
   def typeahead
     query = params[:query]
     query = query.downcase
-    companies = search_companies(query)
-    people = search_people(query)
+    companies = ta_search_companies(query)
+    people = ta_search_people(query)
     results = companies.concat(people)
     respond_to do |format|
       format.json { render json: results.to_json, content_type: 'application/json' }
     end
   end
 
-  def search_companies(query)
+  def ta_search_companies(query)
     companies = Company.where("LOWER(name) LIKE :query", query: "%#{query}%").limit(LIMIT_PER_CATEGORY)
     companies_arr = []
     companies.each do |company|
@@ -31,7 +31,7 @@ class SearchController < ApplicationController
     return companies_arr
   end
 
-  def search_people(query)
+  def ta_search_people(query)
     words = query.split(" ")
     if words.size > 1
       first = words[0]
