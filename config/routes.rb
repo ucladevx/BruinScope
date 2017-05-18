@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 
   match '/users/:id', :to => 'users#show', :as => :user, via: [:get]
 
+  match '/search/:query', to: 'search#search', via: [:get]
+  match '/search/typeahead/:query', to: 'search#typeahead', via: [:get]
+
 end

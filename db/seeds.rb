@@ -60,7 +60,10 @@ if User.count > 0
 
   posts.each do |post|
     company = Company.where(name: post[:company]).first
-    new_post = Post.create(title: post[:title], experience: post[:experience], question: post[:question], resources: post[:resources], position: post[:position], offer: post[:offer], difficulty: post[:difficulty]) do |p|
+    new_post = Post.create(title: post[:title], experience: post[:experience],
+                          question: post[:question], resources: post[:resources],
+                          position: post[:position], offer: post[:offer],
+                          difficulty: post[:difficulty]) do |p|
       p.user = user
       p.company = company
     end

@@ -1,0 +1,39 @@
+var companies = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+    url: '/search/typeahead/%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$(document).ready(function() {
+  console.log("ayyy");
+  $('#search .typeahead').typeahead({
+    highlight: true
+  },
+  {
+    name: 'companies',
+    display: 'name',
+    source: companies,
+    templates: {
+      empty: function(data){
+        return '<div><a href="/search/' + data.query + '"> Search "' + data.query + '"</a></div>';
+      },
+      suggestion: function(data) {
+        var suggestion = "";
+        switch(data.search_category) {
+          case 'person':
+            suggestion = '<div><a href="/users/' + data.id + '">' + data.name + '</a></div>';
+            break;
+          case 'company':
+            suggestion = '<div><img class="tt-suggestion-img" src="' + data.image + '" /><a href="/companies/' + data.id + '">' + data.name + '</a></div>';
+            break;
+          default:
+            break;
+        }
+        return suggestion;
+      }
+    }
+  });
+})
