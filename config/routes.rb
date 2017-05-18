@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   end
   resources :companies
 
+  resources :pages do
+  	get '/search', to: "pages#search", as: 'search'
+	end
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 	# Root path
 	root 'pages#home'
