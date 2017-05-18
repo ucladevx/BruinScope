@@ -73,6 +73,24 @@ class PostsController < ApplicationController
     end
   end
 
+  def comment
+    puts "[TEST OUTPUT]: On comment click"
+    @post = Post.find(params[:post_id])
+    @user = current_user
+
+    respond_to do |format|
+      @comment = Comment.build_from( @post, @user.id, "Test comment" )
+      @all_comments = @post.comment_threads
+      puts @all_comments
+
+      @all_comments.each do |child_comment|
+        puts "hello"
+        puts "Content" + child_comment
+      end
+      format.js { render json: @post.to_json, content_type: 'application/json' }
+    end
+  end
+
   def update
     respond_to do |format|
       if @post.update(post_params)

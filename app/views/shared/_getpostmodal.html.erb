@@ -52,7 +52,6 @@
       </div>
       <div class="content">
         <div class="experience">
-
             <%= post.experience %>
         </div>
 				<!--<div class="experience">
@@ -61,6 +60,11 @@
 						<%= post.question %>
 					<% end %>
 				</div>-->
+      </div>
+      <div class="discussion">
+        <%= link_to post_comment_path(post.id), :id => "comment", :class => "", :remote => true do %>
+              <span> + Add Comment </span>
+        <% end %>
       </div>
     </div>
   </div>
