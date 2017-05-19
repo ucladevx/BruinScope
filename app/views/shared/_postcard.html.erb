@@ -6,8 +6,9 @@
               <% if post.company%>
                   <%= image_tag post.company.image, class: "tiny-company-icon" %>
                   <%= link_to post.company.name, main_app.company_path(post.company.id), class: "company-info"%>  &nbsp·&nbsp
+                  <a class="secondary-info"><%= post.position %></a>
               <% end %>
-                <a class="secondary-info"><%= post.position %></a>
+
           </div>
           <% @button_class = (current_user.voted_for? post)? "upvote-btn-clicked" : "" %>
           <%= link_to post_upvote_path(post.id), :id => "upvote", :class => @button_class + " upvote-btn text-center no-style", :remote => true do %>
