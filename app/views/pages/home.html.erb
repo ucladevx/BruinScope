@@ -17,3 +17,6 @@
         <%= render partial: 'shared/feedcard', locals: {posts: @posts} %>
     </div>
 </div>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "typeahead.js/typeahead.bundle.min.js" %>
+<% end %>
