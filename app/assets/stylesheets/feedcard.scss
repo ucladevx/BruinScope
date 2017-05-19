@@ -11,6 +11,15 @@ h2{
      background-color: #DCE0E0;
      width: 550px;
  }
+ .company-line-divider{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 1px;
+    background-color: #DCE0E0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
  .add-your-experience-divider{
      margin-bottom: 0 !important;
      margin-top: 0 !important;
@@ -41,11 +50,20 @@ h2{
      font-weight: 400;
      font-size: 12px;
  }
+  .big-company-icon{
+    width: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 6px;
+  }
+
  .tiny-company-icon{
      width: 25px;
      height: auto;
      margin-right: 10px;
      display: inline-block;
+     border-radius: 3px;
  }
  
  .upvote-btn{

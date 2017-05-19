@@ -1,9 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h2 style="float: right"> <%= @company.name %> </h2>
+
 <div class="home-cards-container">
     <div class="card-fixed">
-      <%= render partial: 'shared/hotcompaniescard', locals: {companies: Company.all} %>
+   
+
+    	<div class="card hot-companies-card">
+			<div style="padding-top: 50px; ">
+				<%= link_to main_app.company_path(@company.id) do %>
+					<%= image_tag @company.image, class: "big-company-icon" %>
+				<% end %>
+				<h3 style="text-align: center;"> <%= @company.name %> </h3>
+				<div class="secondary-info"style="text-align: center; padding-top: 2px;">Menlo Park, CA</div>
+				<div class="company-line-divider"></div>
+   			<div style="height: 100px;"></div>
+			</div>
+		</div>
+
+
     </div>
     <div>
         <%= render partial: 'shared/feedcard', locals: {posts: @posts} %>
