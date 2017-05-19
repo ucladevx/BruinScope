@@ -1,8 +1,18 @@
 <div class="card feed-card">
-
-    <% if !current_user.nil? %>
-    <h1 style="margin-bottom: 15px;">
-        Search results for "<%= @query %>"
-    </h1>
-    <% end %>
+	<% if !current_user.nil? %>
+		<h1 style="margin-bottom: 15px;">
+			Search results for "<%= @query %>"
+		</h1>
+		<h2> Companies </h2>
+		<%= render partial: 'shared/carousel', locals: {collection: @companies} %>
+		<h2> People </h2>
+		<%= render partial: 'shared/carousel', locals: {collection: @people} %>
+	<% end %>
 </div>
+	
+<script type="text/javascript">
+  $(document).load(function(){
+  			console.log("hi");
+  	    initCarousel(".search-carousel-companies", 2);
+  	      });
+</script>

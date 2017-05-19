@@ -4,6 +4,9 @@ class SearchController < ApplicationController
   def search
     @results = Post.all
     @query = params[:query]
+    query = @query.downcase
+    @companies = ta_search_companies(query)
+    @people = ta_search_people(query)
   end
 
   def typeahead
