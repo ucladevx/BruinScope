@@ -61,11 +61,7 @@
 					<% end %>
 				</div>-->
       </div>
-      <div class="discussion">
-        <%= link_to post_comment_path(post.id), :id => "comment", :class => "", :remote => true do %>
-              <span> + Add Comment </span>
-        <% end %>
-      </div>
+      <%= render partial: "comments/template", locals: {commentable: @post, new_comment: @comment} %>
     </div>
   </div>
 </div>

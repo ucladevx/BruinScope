@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   resources :posts do
     get 'upvote' => 'posts#upvote', as: :upvote
-    get 'comment' => 'posts#comment', as: :comment
   end
+
+  resources :comments
 
   resources :companies
 

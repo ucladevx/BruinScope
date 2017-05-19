@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def show
     # Get the post id from the URL params
     @post = Post.find(params[:id])
+    @new_comment = Comment.build_from(@post, current_user.id, "")
 
     # Respond to a remote call (AJAX) with some javascript
     respond_to do |format|
@@ -73,6 +74,8 @@ class PostsController < ApplicationController
     end
   end
 
+=begin
+  Comments v1.
   def comment
     puts "[TEST OUTPUT]: On comment click"
     @post = Post.find(params[:post_id])
@@ -90,6 +93,7 @@ class PostsController < ApplicationController
       format.js { render json: @post.to_json, content_type: 'application/json' }
     end
   end
+=end
 
   def update
     respond_to do |format|
