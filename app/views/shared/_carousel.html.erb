@@ -1,0 +1,13 @@
+<% if collection %>
+	<div class="search-carousel-companies">
+			<% collection.each do |item| %>
+					<div class="search-card company-main">
+						<% if item[:search_category] == "company" %>
+							<%= link_to main_app.company_path(item[:id]) do %>
+								<%= image_tag item[:image], class: "company-image" %>
+							<% end %>
+						<% end %>
+					</div>
+			<% end %>
+	</div>
+<% end %>
