@@ -1,0 +1,49 @@
+*:focus {outline:0;}
+
+.slick-list{
+	overflow: hidden;
+
+}
+
+.slick-dots{
+	display: none !important;
+}
+
+.slick-arrow{
+	position: absolute;
+	z-index: 24;
+	display: flex;
+	justify-content: center;
+	top: 50%;
+	border-radius: 0px;
+	min-width: auto;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid #eeeeee;
+	background-color: white;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+
+	&.slick-prev{
+		left: -50px;
+	}
+	&.slick-next{
+		right: -50px;
+	}
+}
+
+@media(max-width: 1200px){
+
+	.slick-arrow{
+
+		&.slick-prev{
+			left: 0px;
+		}
+		&.slick-next{
+			right: 0px;
+		}
+
+	}
+
+}
