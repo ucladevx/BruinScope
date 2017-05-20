@@ -5,11 +5,11 @@
         Trending
     </h1>
     <div class="line-divider add-your-experience-divider"></div>
-		<% if current_page?(main_app.root_path) %>
+		
 			<%= link_to main_app.new_post_path, remote: true do %>
 				<h2 class="trending-card-input">Add your experience...</h2>
 			<% end %>
-		<% end %>
+		
 		<!-- <a class="new-post-button" onClick="createNewPost(event)">
 		</a> -->
 		<div class="line-divider add-your-experience-divider"></div>
