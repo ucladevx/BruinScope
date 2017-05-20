@@ -2,22 +2,22 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 company_list = [
-	[ "Facebook", "Menlo Park, CA" ],
-	[ "Amazon", "Seattle, WA"],
-	[ "LinkedIn", "Sunnyvale, CA"],
-	[ "Palantir", "Palo Alto, CA"],
-	[ "Snap", "Los Angeles, CA"],
-	[ "Stripe", "San Francisco, CA"],
-	[ "Twitter", "San Francisco, CA"],
-	[ "Google", "Mountain View, CA" ],
-	[ "Uber", "San Francisco, CA" ],
-	[ "Microsoft", "Redmond, WA" ],
-	[ "Apple", "Cupertino, CA" ],
-	[ "Airbnb", "San Francisco, CA" ]
+	[ "Facebook", "Menlo Park, CA", "www.facebook.com" ],
+	[ "Amazon", "Seattle, WA", "www.amazon.com"],
+	[ "LinkedIn", "Sunnyvale, CA", "www.linkedin.com"],
+	[ "Palantir", "Palo Alto, CA", "www.palantir.com"],
+	[ "Snap", "Los Angeles, CA", "www.snap.com"],
+	[ "Stripe", "San Francisco, CA", "www.stripe.com"],
+	[ "Twitter", "San Francisco, CA", "www.twitter.com"],
+	[ "Google", "Mountain View, CA", "www.google.com" ],
+	[ "Uber", "San Francisco, CA", "www.uber.com" ],
+	[ "Microsoft", "Redmond, WA", "www.microsoft.com" ],
+	[ "Apple", "Cupertino, CA", "www.apple.com" ],
+	[ "Airbnb", "San Francisco, CA", "www.airbnb.com" ]
 ]
 
-company_list.each do |name, location|
-	Company.create(name: name, location: location)
+company_list.each do |name, location, link|
+	Company.create(name: name, location: location, link: link)
 end
 
 
