@@ -9,10 +9,7 @@
 		<%= render partial: 'shared/carousel', locals: {collection: @people} %>
 	<% end %>
 </div>
-	
+
 <script type="text/javascript">
-  $(document).load(function(){
-  			console.log("hi");
-  	    initCarousel(".search-carousel-companies", 2);
-  	      });
+	initCarousel(".search-carousel", 2);
 </script>

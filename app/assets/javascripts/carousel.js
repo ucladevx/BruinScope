@@ -10,7 +10,6 @@ function initCarousel(className, slides){
 	  arrows: true,
 	  prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>',
 	  nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>',
-	  //appendArrows: $('.insert-carousel-nav-into'),
 	  responsive: [
 	    {
 	      breakpoint: 1024,

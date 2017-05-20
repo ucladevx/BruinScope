@@ -1,5 +1,14 @@
 .search-carousel {
   position: relative;
+  padding: 0px 15px;
+  background: white;
+  
+  .slick-prev{
+    left: 10px;
+  }
+  .slick-next{
+    right: 10px;
+  }
 
   &:after {
     content: "";
@@ -9,6 +18,11 @@
 
   .search-card {
     float: left;
+    margin: 30px 15px;
+    background: white;
+    .company-main{
+      width: 100%;
+    }
   }
 
   .user-card {
@@ -28,6 +42,12 @@
       border-radius: 50%;
     }
   }
+  .company-image{
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50%;
+  }
 
   .company-card {
     margin: 10px;
@@ -37,43 +57,4 @@
       object-fit: cover;
     }
   }
-}
-
-//////////companies////////
-.search-carousel-companies{
-
-  position: relative;
-  padding: 0px 15px;
-  background: white;
-
-  .slick-prev{
-    left: 10px;
-  }
-  .slick-next{
-    right: 10px;
-  }
-
-  .company-image{
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: 50%;
-  }
-
-  .search-card{
-
-    margin: 30px 15px;
-    background: white;
-    .company-main{
-      width: 100%;
-    }
-
-    .name{
-      margin: 10px;
-      border: 1px solid #eeeeee;
-      padding: 20px;
-    }
-
-  }
-
 }
