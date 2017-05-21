@@ -40,25 +40,38 @@
     padding: 8px 0;
     background-color: #fff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
-    border: none;
+    border: 1px solid #DCE0E0;
     border-radius: 5px;
+    padding: none;
+}
+.tt-open{
+  padding: 0;
 }
 
 .tt-suggestion {
     padding: 3px 20px;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 40px;
     color: black;
+    border-bottom: 1px solid #DCE0E0;
+}
+.tt-suggestion > a{
+  color: #53575A;
+  font-size: 14px !important
 }
 
 .tt-suggestion:hover {
-  background: #53575A;
-  color: white;
+  background: #F4F4F4 !important;
+}
+.tt-suggestion:hover > a{
+  color: #3691A8 !important;
 }
 
 .tt-cursor {
-  background: #53575A;
-  color: white;
+  background: #F4F4F4 !important;
+}
+.tt-cursor > a {
+  color: #3691A8 !important;
 }
 
 .tt-dataset-header {
@@ -69,11 +82,13 @@
   width: 25px;
   display: inline-block;
   float: left;
-  margin-right: 10px;
+  margin-right: 12px;
+  margin-top: 7.5px;
+  border-radius: 3px;
 }
 .tt-suggestion {
   display: block;
-  padding: 3px 20px;
+  padding: 3px 12px;
 }
 .tt-suggestion.tt-is-under-cursor {
   color: #fff;
