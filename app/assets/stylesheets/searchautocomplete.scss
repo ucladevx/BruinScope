@@ -61,14 +61,24 @@
 }
 
 .tt-suggestion:hover {
-  background: #F4F4F4 !important;
+  background-color: #EFF7F8;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
 }
 .tt-suggestion:hover > a{
   color: #3691A8 !important;
 }
 
 .tt-cursor {
-  background: #F4F4F4 !important;
+  background-color: #EFF7F8;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
 }
 .tt-cursor > a {
   color: #3691A8 !important;

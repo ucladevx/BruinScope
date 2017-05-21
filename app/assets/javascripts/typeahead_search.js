@@ -17,9 +17,6 @@ $(document).ready(function() {
     display: 'name',
     source: companies,
     templates: {
-      empty: function(data){
-        return '<div><a href="/search/' + data.query + '"> Search "' + data.query + '"</a></div>';
-      },
       suggestion: function(data) {
         var suggestion = "";
         switch(data.search_category) {
