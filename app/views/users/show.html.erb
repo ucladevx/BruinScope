@@ -1,2 +1,17 @@
 <p id="notice"><%= notice %></p>
-<h1><%= @user.full_name %>'s Profile</h4>
+<div class="home-cards-container">
+	<div class="card-fixed">
+		<div class="card user-card">
+			<%= image_tag @user.image, class: "user-picture" %>
+			<h3 style="text-align: center;"> <%= @user.full_name %> </h3>
+			<% if current_user == @user %>
+			<div class="secondary-info"style="text-align: center; padding-top: 4px;">
+				<%= link_to "Edit", main_app.edit_user_registration_path(@user) %>
+			</div>
+		<% end %>
+		</div>
+	</div>
+	<div>
+		<%= render partial: 'shared/feedcard', locals: {posts: @user.posts} %>
+	</div>
+</div>

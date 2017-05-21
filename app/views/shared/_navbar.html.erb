@@ -22,43 +22,40 @@
 			</li>
 			<li>
 				<% if user_signed_in? %>
-	                <a class="profile-img-icon">
-	                    <img src="/assets/blankprofpic.svg">
-	                </a>
-				
+					<%= link_to image_tag(current_user.image, class: "profile-img-icon"), main_app.user_path(current_user.id), style: "padding:0;"%>
 				<% else %>
 					<%= link_to "Sign in with UCLA", user_google_oauth2_omniauth_authorize_path %>
 				<% end %>
 			</li>
-		</ul>
-     
-     
-     
-     <form class="navbar-form">
-        <div class="form-group" style="display:inline;">
-          <div class="input-group" style="display:table;" id="search">
-            <span class="input-group-addon" style="width:1%;"><span class="glyphicon"><svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                <title>magnifying-glass</title>
-                <desc>Created with Sketch.</desc>
-                <defs></defs>
-                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.2">
-                    <g id="Navbar" transform="translate(-248.000000, -22.000000)" fill-rule="nonzero" fill="#F4F4F4">
-                        <g id="Group-6">
-                            <g id="magnifying-glass" transform="translate(248.000000, 22.000000)">
-                                <g id="Capa_1">
-                                    <path d="M13.8789088,13.1307755 L10.475937,9.76831522 C11.388778,8.73135211 11.9414504,7.37839137 11.9414504,5.89964515 C11.9414504,2.64456273 9.2619206,0 5.97072522,0 C2.67642493,0 0,2.64763066 0,5.89964515 C0,9.15165964 2.67952983,11.7992903 5.97072522,11.7992903 C7.46728765,11.7992903 8.83654912,11.2531973 9.88600577,10.3512235 L13.2889776,13.7136837 C13.369705,13.7934501 13.4783766,13.8364013 13.5839432,13.8364013 C13.6895099,13.8364013 13.7981814,13.7965181 13.8789088,13.7136837 C14.0403637,13.554151 14.0403637,13.2903083 13.8789088,13.1307755 Z M0.835218452,5.89964515 C0.835218452,3.10168552 3.13905522,0.828343313 5.96762031,0.828343313 C8.79929031,0.828343313 11.1000222,3.10475346 11.1000222,5.89964515 C11.1000222,8.69453685 8.79929031,10.9740149 5.96762031,10.9740149 C3.13905522,10.9740149 0.835218452,8.69760479 0.835218452,5.89964515 Z" id="Shape"></path>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </svg></span></span>
-            
-            <input class="form-control typeahead navbar-input" name="search" placeholder="Search for a company, position, or person..." autocomplete="off" autofocus="autofocus" type="text">
-            
-          </div>
-        </div>
-      </form>
+			</ul>
 
-    </div>
+
+
+			<form class="navbar-form">
+				<div class="form-group" style="display:inline;">
+					<div class="input-group" style="display:table;" id="search">
+						<span class="input-group-addon" style="width:1%;"><span class="glyphicon"><svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg">
+									<title>magnifying-glass</title>
+									<desc>Created with Sketch.</desc>
+									<defs></defs>
+									<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.2">
+									<g id="Navbar" transform="translate(-248.000000, -22.000000)" fill-rule="nonzero" fill="#F4F4F4">
+									<g id="Group-6">
+									<g id="magnifying-glass" transform="translate(248.000000, 22.000000)">
+									<g id="Capa_1">
+									<path d="M13.8789088,13.1307755 L10.475937,9.76831522 C11.388778,8.73135211 11.9414504,7.37839137 11.9414504,5.89964515 C11.9414504,2.64456273 9.2619206,0 5.97072522,0 C2.67642493,0 0,2.64763066 0,5.89964515 C0,9.15165964 2.67952983,11.7992903 5.97072522,11.7992903 C7.46728765,11.7992903 8.83654912,11.2531973 9.88600577,10.3512235 L13.2889776,13.7136837 C13.369705,13.7934501 13.4783766,13.8364013 13.5839432,13.8364013 C13.6895099,13.8364013 13.7981814,13.7965181 13.8789088,13.7136837 C14.0403637,13.554151 14.0403637,13.2903083 13.8789088,13.1307755 Z M0.835218452,5.89964515 C0.835218452,3.10168552 3.13905522,0.828343313 5.96762031,0.828343313 C8.79929031,0.828343313 11.1000222,3.10475346 11.1000222,5.89964515 C11.1000222,8.69453685 8.79929031,10.9740149 5.96762031,10.9740149 C3.13905522,10.9740149 0.835218452,8.69760479 0.835218452,5.89964515 Z" id="Shape"></path>
+									</g>
+									</g>
+									</g>
+									</g>
+									</g>
+								</svg></span></span>
+
+								<input class="form-control typeahead navbar-input" name="search" placeholder="Search for a company, position, or person..." autocomplete="off" autofocus="autofocus" type="text">
+
+					</div>
+				</div>
+			</form>
+
+		</div>
 </div>

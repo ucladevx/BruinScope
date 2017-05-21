@@ -1,9 +1,12 @@
 class Company < ApplicationRecord
+	# A Company will have many posts tied to it
 	has_many :posts
 
+	# Every company needs a name and location
 	validates :name , presence: true
 	validates :location, presence: true
 
+	# Always sets the image for a company upon creation
 	after_validation :set_image
 
 	private
