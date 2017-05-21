@@ -1,0 +1,22 @@
+.user-registration-edit{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	.inputfile{
+		width: 0.1px;
+		opacity: 0px;
+		overflow: hidden;
+		position: absolute;
+		z-index: -1;
+	}
+	.avatar-upload {
+		padding: 10px;
+		background: #F4F4F4;
+		border: 1px solid #3691A8;
+		color: #3691A8;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+}
