@@ -55,3 +55,7 @@ $(document).on("click", "#next-button", function(e){
     });
     $('#mod').scrollTop(0);
 });
+
+$(document).on("click", "#filter-home-page", function(e){
+    $('#filter-home-page-card').slideToggle(300, 'swing');
+});

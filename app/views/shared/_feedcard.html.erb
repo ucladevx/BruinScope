@@ -1,9 +1,15 @@
 <div class="card feed-card trending-card">
 
     <% if !current_user.nil? %>
-    <h1 style="margin-bottom: 15px;">
-        Trending
-    </h1>
+
+    <div id="filter-home-page">
+        <h1 style="margin-bottom: 15px; display:inline-block;">
+            Trending &nbsp
+        </h1>
+        <div style="display: inline-block;" class="fa fa-caret-down"></div>
+    </div>
+    <div id="filter-home-page-card">
+    </div>
     <div class="line-divider add-your-experience-divider"></div>
 		
 			<%= link_to main_app.new_post_path, remote: true do %>

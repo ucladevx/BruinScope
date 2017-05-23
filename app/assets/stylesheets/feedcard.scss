@@ -174,3 +174,26 @@ h4{
   padding-left: 45px;
   padding-right: 45px;
 }
+
+.fa-caret-down{
+  color: #D3D3D3;
+}
+#filter-home-page{
+
+}
+#filter-home-page:hover{
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#filter-home-page-card{
+  position: absolute;
+  background: white;
+  height: 100px;
+  width: 100px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  display: none;
+}
