@@ -191,9 +191,52 @@ h4{
 #filter-home-page-card{
   position: absolute;
   background: white;
-  height: 100px;
-  width: 100px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
   border-radius: 5px;
   display: none;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 60px;
+  padding-right: 60px;
+  z-index:10000;
 }
+
+.tag-button{
+  display:inline-block;
+  background-color: #F4F4Fa;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: #B1B1B1 !important;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
+}
+.tag-button:hover{
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  color: #53575A !important;
+}
+
+.tag-button:active, .tag-button:focus {
+  background-color: #FF6376 !important;
+  color: white !important;
+}
+
+.tag-button-clicked{
+    background-color: #FF6376 !important;
+    color: white !important;
+}
+#se{}
+
+#pm{}
+
+#pd{}
+
+#ds{}

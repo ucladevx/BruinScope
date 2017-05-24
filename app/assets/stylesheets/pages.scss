@@ -119,3 +119,14 @@ span.twitter-typeahead{
   float: left;
   margin-right: 10px;
 }
+
+
+.overlay {
+  position: fixed;
+  z-index: 32;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+}

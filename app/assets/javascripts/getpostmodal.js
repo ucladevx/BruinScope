@@ -10,6 +10,17 @@ function flashErrorMessage(message) {
   $(".alert").removeClass('hidden');
 }
 
+function showFilterModal(modalClass){
+    $('body').addClass('locked');
+    $('.' + modalClass).removeClass('yhide');
+    $('#filter-home-page-card').slideToggle(300, 'swing');
+}
+function hideFilterModal(modalClass){
+    $('body').removeClass('locked');
+    $('.' + modalClass).addClass('yhide');
+    $('#filter-home-page-card').slideToggle(300, 'swing');
+}
+
 function showModal(modalClass){
 	$('body').addClass('locked');
 	$('.' + modalClass).removeClass('yhide');
@@ -57,5 +68,21 @@ $(document).on("click", "#next-button", function(e){
 });
 
 $(document).on("click", "#filter-home-page", function(e){
-    $('#filter-home-page-card').slideToggle(300, 'swing');
+    showFilterModal("filterview");
+});
+
+$("#se").click(function () {
+    $(this).toggleClass(".tag-button-clicked");
+});
+
+$("#pm").click(function () {
+    $(this).toggleClass(".tag-button-clicked");
+});
+
+$("#pd").click(function () {
+    $(this).toggleClass(".tag-button-clicked");
+});
+
+$("#ds").click(function () {
+    $(this).toggleClass(".tag-button-clicked");
 });
