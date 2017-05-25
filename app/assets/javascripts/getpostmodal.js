@@ -10,16 +10,7 @@ function flashErrorMessage(message) {
   $(".alert").removeClass('hidden');
 }
 
-function showFilterModal(modalClass){
-    $('body').addClass('locked');
-    $('.' + modalClass).removeClass('yhide');
-    $('#filter-home-page-card').slideToggle(300, 'swing');
-}
-function hideFilterModal(modalClass){
-    $('body').removeClass('locked');
-    $('.' + modalClass).addClass('yhide');
-    $('#filter-home-page-card').slideToggle(300, 'swing');
-}
+
 
 function showModal(modalClass){
 	$('body').addClass('locked');
@@ -67,8 +58,10 @@ $(document).on("click", "#next-button", function(e){
     $('#mod').scrollTop(0);
 });
 
-$(document).on("click", "#filter-home-page", function(e){
-    showFilterModal("filterview");
+
+$(document).on("click", "#filter-home-page", function(e) {
+    console.log("he");
+    $('#filter-home-page-card').fadeToggle(200, 'swing');
 });
 
 $("#se").click(function () {

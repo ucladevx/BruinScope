@@ -84,6 +84,24 @@ h5{
   background-color: rgba(255, 99, 118, .8);
   cursor: pointer;
 }
+.small-button{
+  width: 130px;
+  height: 28.3px;
+  border-radius: 2.7px;
+  color: #D3D3D3;
+  background-color: white;
+  border: 1px solid #DCE0E0;
+  font-size: 12px;
+  font-weight: 700;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top: 15px;
+  text-align: center;
+  padding-top: 4.5px;
+  margin-bottom: 15px;
+}
 .small-column{
   width:42%;
 }
