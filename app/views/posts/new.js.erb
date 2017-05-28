@@ -6,3 +6,33 @@ $('.showme').html("<%= escape_javascript(render partial: "shared/newpost", local
 hideModal('getpostmodal');
 // Will activate the showModal function in the assets/javascript/getpostmodal.js
 showModal('newpostmodal');
+
+var inputStrLength = 0;
+
+$('#interview-questions').on("keyup", function(e) {
+        var inputStr = $(this).val();
+        if (event.keyCode == 8 || event.keyCode == 46) {
+            inputStr = $(this).val();
+        }
+        inputStrLength = inputStr.length
+        if(inputStrLength > 0){
+            $('#add-question-button').css('color', '#53575A');
+
+        }
+        else{
+            $('#add-question-button').css('color', '#D3D3D3');
+        }
+});
+
+$('#add-question-button').hover(function(e){
+    if(inputStrLength > 0){
+        $('#add-question-button').css('cursor', 'pointer');
+    }
+})
+
+/*$('#add-question-button').click( function(e){
+    console.log("I AM HERE");
+    if(inputStrLength > 0){
+        $('#cached-questions').html($(#interview-questions).val(););
+    }
+})*/

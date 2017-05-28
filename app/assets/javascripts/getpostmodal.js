@@ -64,6 +64,8 @@ $(document).on("click", "#filter-home-page", function(e) {
     $('#filter-home-page-card').fadeToggle(200, 'swing');
 });
 
+
+
 $("#se").click(function () {
     $(this).toggleClass(".tag-button-clicked");
 });
@@ -79,3 +81,7 @@ $("#pd").click(function () {
 $("#ds").click(function () {
     $(this).toggleClass(".tag-button-clicked");
 });
+
+
+
+
