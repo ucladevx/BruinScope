@@ -36,8 +36,12 @@
 		<!-- <a class="new-post-button" onClick="createNewPost(event)">
 		</a> -->
 		<div class="line-divider add-your-experience-divider"></div>
-		<div>
+		<div id="posts">
 			<%= render partial: 'shared/postslist', locals: {posts: posts} %>
+			<!-- Pagination begins here -->
+			<div id="infinite-scrolling">
+				<%= will_paginate posts %>
+			</div>
 		</div>
     <% else %>
       <%= render partial: 'shared/not_logged_in' %>
