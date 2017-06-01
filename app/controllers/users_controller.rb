@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.paginate(page: params[:page], per_page: 3).order('created_at desc')
     unless @user == current_user
       redirect_to :back, :alert => "Access denied."
     end
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if update
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -74,6 +75,6 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
 			# Add :avatar, :avatar_cache and :remove_avatar
-      params.fetch(:user, {})
+      params.require(:user).permit(:email, :avatar, :avatar_cache, :remove_avatar)
     end
 end

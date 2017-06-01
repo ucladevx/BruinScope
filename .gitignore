@@ -45,3 +45,7 @@ bower.json
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore temp files
+*.swp
+*.swo

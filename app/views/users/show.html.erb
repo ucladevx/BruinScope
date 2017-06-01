@@ -2,16 +2,19 @@
 <div class="home-cards-container">
 	<div class="card-fixed">
 		<div class="card user-card">
-			<%= image_tag @user.image, class: "user-picture" %>
+			<%= image_tag @user.avatar, class: "user-picture" %>
 			<h3 style="text-align: center;"> <%= @user.full_name %> </h3>
 			<% if current_user == @user %>
 			<div class="secondary-info"style="text-align: center; padding-top: 4px;">
 				<%= link_to "Edit", main_app.edit_user_registration_path(@user) %>
 			</div>
+			<div class="secondary-info"style="text-align: center; padding-top: 4px;">
+				<%= link_to "Logout", main_app.destroy_user_session_path, method: :delete %>
+			</div>
 		<% end %>
 		</div>
 	</div>
 	<div>
-		<%= render partial: 'shared/feedcard', locals: {posts: @user.posts} %>
+		<%= render partial: 'shared/feedcard', locals: {posts: @posts} %>
 	</div>
 </div>

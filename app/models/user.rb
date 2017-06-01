@@ -31,7 +31,7 @@ class User < ApplicationRecord
         first_name: data["first_name"].capitalize,
         last_name: data["last_name"].capitalize,
         email: data["email"],
-        image: data["image"] ? data["image"] : ActionController::Base.helpers.asset_path("default-avatar.svg"),
+        avatar: data["image"] ? data["image"] : ActionController::Base.helpers.asset_path("default-avatar.svg"),
         password: Devise.friendly_token[0,20]
       )
     end

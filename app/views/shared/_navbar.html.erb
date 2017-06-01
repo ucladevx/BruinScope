@@ -22,7 +22,7 @@
 			</li>
 			<li>
 				<% if user_signed_in? %>
-					<%= link_to image_tag(current_user.image, class: "profile-img-icon"), main_app.user_path(current_user.id), style: "padding:0;"%>
+					<%= link_to image_tag(current_user.avatar, class: "profile-img-icon"), main_app.user_path(current_user.id), style: "padding:0;"%>
 				<% else %>
 					<%= link_to "Sign in with UCLA", user_google_oauth2_omniauth_authorize_path %>
 				<% end %>
