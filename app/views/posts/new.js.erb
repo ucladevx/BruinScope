@@ -152,6 +152,24 @@ $('#add-question-button').click( function(e){
     }
 })
 
+function getQuestionStr(){
+    var ret = '';
+    var hasPlacedFirstElement = false;
+    for(var i = 1; i <= numOfQuestions; i++){
+        var selector = "#interview-question" + i;
+        if($(selector).val() === "")
+            continue;
+        else if(hasPlacedFirstElement)
+            ret += ", " + $(selector).val();
+    
+        else{
+            ret += $(selector).val();
+            hasPlacedFirstElement = true;
+        }
+    }
+    return ret;
+}
+
 
 $(document).on("click", "#next-button", function(e){
     if(canProceed){
@@ -195,6 +213,7 @@ $('#r9').click(function() {
 $('#r10').click(function() {
    if($('#r10').is(':checked')) { postForm(); }
 });
+
 
 
 
