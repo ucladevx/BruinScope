@@ -23,7 +23,7 @@
     <div class="modal-line-divider"></div>
     <h5>Experience Description</h5>
     <%= f.text_area :experience, class: 'modal-input modal-input-big-description', autofocus: true, required: true,
-          placeholder: 'How would you describe your interview and recruiting experience?' %>
+          placeholder: 'How would you describe your interview and recruiting experience? (Minimum of 50 characters)' %>
 	<div class="modal-line-divider"></div>
 	<h5>Interview Questions</h5>
 	<div id="cached-questions">
@@ -94,6 +94,9 @@
         </div>
     </div>
     <div class="modal-line-divider"></div>
-    <%= f.submit "Post", class: 'button input-button-fix', id: "next-button"%>
+    <div style="justify-content:flex-end;display:-webkit-flex; display:flex;">
+        <div class="back-button" style="margin-right:auto;" id="back-button">Back</div>
+        <%= f.submit "Post", class: 'button input-button-fix', id: "post-button"%>
+    </div>
   </div>
 <% end %>

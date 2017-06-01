@@ -51,12 +51,6 @@ $(document).on("click", ".close", function(e){
   });
 });
 
-$(document).on("click", "#next-button", function(e){
-    $('#step-1').fadeOut(200, function(){
-        $('#step-2').fadeIn(200);
-    });
-    $('#mod').scrollTop(0);
-});
 
 
 $(document).on("click", "#filter-home-page", function(e) {
