@@ -1,0 +1,12 @@
+// Append more posts as a postslist
+$('#posts').append('<%= j render partial: 'shared/postslist', locals: {posts: @posts} %>');
+// Only paginate if another page exists
+<% if @posts.next_page %>
+	$('.pagination').replaceWith('<%= j will_paginate @posts %>');
+<% else %>
+	// Else stop listening for scroll event
+	$(window).off('scroll');
+	$('.pagination').remove();
+<% end %>
+
+
