@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+	self.per_page = 2
 
   def list
     @posts = Post.all

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.paginate(page: params[:page], per_page: 3).order('created_at desc')
+    @posts = @user.posts.paginate(page: params[:page]).order('created_at desc')
     unless @user == current_user
       redirect_to :back, :alert => "Access denied."
     end

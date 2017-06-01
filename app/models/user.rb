@@ -9,7 +9,7 @@ class User < ApplicationRecord
   acts_as_voter
 
   # A user will have many posts if not posted anonymously
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   # Profile image uploader 
   mount_uploader :avatar, AvatarUploader
@@ -23,7 +23,8 @@ class User < ApplicationRecord
   def self.from_omniauth(access_token)
     data = access_token.info
     puts data
-    user = User.where(:email => data["email"]).first
+    # if you ever want to get the image from google - data["image"]
+    user = User.where(email: data["email"]).first
 
     # Create user if it doesn't exist.
     unless user
@@ -31,7 +32,6 @@ class User < ApplicationRecord
         first_name: data["first_name"].capitalize,
         last_name: data["last_name"].capitalize,
         email: data["email"],
-        avatar: data["image"] ? data["image"] : ActionController::Base.helpers.asset_path("default-avatar.svg"),
         password: Devise.friendly_token[0,20]
       )
     end
