@@ -11,7 +11,11 @@ class CompaniesController < ApplicationController
   # GET /companies/1.json
   def show
   	@company = Company.find(params[:id])
-  	@posts = @company.posts
+  	@posts = @company.posts.paginate(page: params[:page], per_page: 2).order("created_at desc")
+  	respond_to do |format|
+  		format.html
+  		format.js
+		end
   end
 
   # GET /companies/new

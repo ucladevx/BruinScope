@@ -30,13 +30,16 @@
     </div>
     <div class="line-divider add-your-experience-divider"></div>
 		
+		<!--- Only show add button if its relevant as decided by top level view -->
+		<% if add %>
 			<%= link_to main_app.new_post_path, remote: true do %>
 				<h2 class="trending-card-input">Add your experience...</h2>
 			<% end %>
+		<div class="line-divider add-your-experience-divider"></div>
+		<% end %>
 		
 		<!-- <a class="new-post-button" onClick="createNewPost(event)">
 		</a> -->
-		<div class="line-divider add-your-experience-divider"></div>
 		<div id="posts">
 			<%= render partial: 'shared/postslist', locals: {posts: posts} %>
 			<!-- Pagination begins here -->

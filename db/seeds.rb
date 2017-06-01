@@ -19,6 +19,7 @@ company_list = [
 company_list.each do |name, location, link|
 	company = Company.where(name: name)
 	if company.empty?
+		puts "Creating company #{name}"
 		Company.create(name: name, location: location, link: link)
 	end
 end
@@ -26,6 +27,7 @@ end
 
 
 if User.count > 0
+	puts "Creating seed posts"
 	user = User.first
 
 	posts = [

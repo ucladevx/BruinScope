@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
   resources :companies
 
-  devise_for :users, :controllers => { 
+  devise_for :users, :controllers => {
   	omniauth_callbacks: "users/omniauth_callbacks",
   	registrations: 'users/registrations'
   }
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   match '/users/:id', :to => 'users#show', :as => :user, via: [:get]
 
-  match '/search/:query', to: 'search#search', via: [:get]
+  match '/search', to: 'search#search', via: [:get]
   match '/search/typeahead/:query', to: 'search#typeahead', via: [:get]
 
 end

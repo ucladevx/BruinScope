@@ -14,16 +14,12 @@
 			<div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
 		<% end %>
 
-		<div>
-			<% if current_user.avatar.url.present? %>
-				<%= image_tag current_user.avatar.url, class: "user-picture" %>
-			<% end %>
-		</div>
-		<div class="field">
-			<%= f.file_field :avatar, class: 'inputfile' %>
-			<%= f.label :avatar, class: 'avatar-upload' do %>
-				<i class="fa fa-upload" aria-hidden="true"></i>&nbsp<span>Upload profile image</span>
-			<% end %>
+		<div class="form-group">
+			<img id="img_prev" src="#" alt="your image" class="user-picture hidden"/> <br/>
+			<span class="btn btn-default btn-file">
+				Upload Avatar Image<%= f.file_field :avatar, id: "avatar-upload" %>
+		</span>
+		<%= f.hidden_field :avatar_cache %>
 		</div>
 
 		<div class="actions">
@@ -31,9 +27,9 @@
 		</div>
 	<% end %>
 
-	<h3>Cancel my account</h3>
+	<h3>Delete Account</h3>
 
-	<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+	<p>Unhappy? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "We are sorry to see you go. Are you sure you want to delete your account?" }, method: :delete %></p>
 
-	<%= link_to "Back", :back %>
+	<%= link_to "Cancel", main_app.user_path(current_user.id)%>
 </div>

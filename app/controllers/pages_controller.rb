@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 	def home
-    # Paginate posts by pages using will_paginate gem
-    @posts = Post.paginate(page: params[:page], per_page: 3).order('created_at desc')
+    # Paginate posts by pages using will_paginate gem - change per page to larger number
+    @posts = Post.paginate(page: params[:page], per_page: 2).order('created_at desc')
 
 		# This is how we would filter based on new, trending and hot
     # @posts = Post.filter(params.slice(:new, :trending, :hot)).paginate(page: params[:page], per_page: 3)

@@ -7,6 +7,13 @@ var companies = new Bloodhound({
   }
 });
 
+function encodeQueryParams(data) {
+   var ret = [];
+   for (var key in data)
+     ret.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+   return ret.join('&');
+}
+
 $(document).ready(function() {
   console.log("ayyy");
   $('#search .typeahead').typeahead({
@@ -26,6 +33,10 @@ $(document).ready(function() {
           case 'company':
             suggestion = '<div><img class="tt-suggestion-img" src="' + data.image + '" /><a href="/companies/' + data.id + '">' + data.name + '</a></div>';
             break;
+          case 'position':
+            var params = {"exp_position": data.name};
+            suggestion = '<div><a href="/search?' + encodeQueryParams(params) + '">' + data.name + '</a></div>';
+            break;
           default:
             break;
         }
@@ -36,7 +47,8 @@ $(document).ready(function() {
   $('.navbar-input').on("keypress", function(e) {
     if (e.keyCode == 13) {
       console.log(this);
-      document.location.href = '/search/' + this.value;
+      var params = {"query": this.value};
+      document.location.href = '/search?' + encodeQueryParams(params);
       return false; // prevent the button click from happening
     }
   });

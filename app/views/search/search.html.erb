@@ -8,6 +8,14 @@
 		<h2> People </h2>
 		<%= render partial: 'shared/carousel', locals: {collection: @people} %>
 	<% end %>
+  <% if @experiences %>
+
+  <div id="posts">
+    <h1 style="text-decoration:underline;">Relevant posts</h1>
+    <%= render partial: 'shared/postslist', locals: {posts: @experiences} %>
+    <!-- Pagination begins here -->
+  </div>
+  <% end %>
 </div>
 
 <script type="text/javascript">
