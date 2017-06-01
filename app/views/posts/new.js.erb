@@ -7,15 +7,20 @@ hideModal('getpostmodal');
 // Will activate the showModal function in the assets/javascript/getpostmodal.js
 showModal('newpostmodal');
 
-var inputStrLength = 0;
 
-$('#interview-questions').on("keyup", function(e) {
+var lastInputStrLength = 0;
+var htmlStr = '';
+var numOfQuestions = 1;
+var interviewQuestionId = '#interview-question' + numOfQuestions;
+
+
+$(interviewQuestionId).on("keyup", function(e) {
         var inputStr = $(this).val();
         if (event.keyCode == 8 || event.keyCode == 46) {
             inputStr = $(this).val();
         }
-        inputStrLength = inputStr.length
-        if(inputStrLength > 0){
+        lastInputStrLength = inputStr.length
+        if(lastInputStrLength > 0){
             $('#add-question-button').css('color', '#53575A');
 
         }
@@ -25,14 +30,15 @@ $('#interview-questions').on("keyup", function(e) {
 });
 
 $('#add-question-button').hover(function(e){
-    if(inputStrLength > 0){
+    if(lastInputStrLength > 0){
         $('#add-question-button').css('cursor', 'pointer');
     }
 })
 
-/*$('#add-question-button').click( function(e){
-    console.log("I AM HERE");
-    if(inputStrLength > 0){
-        $('#cached-questions').html($(#interview-questions).val(););
+$('#add-question-button').click( function(e){
+    if(lastInputStrLength > 0){
+        numOfQuestions += 1;
+        htmlStr = "<div class='light-modal-line-divider'></div><textarea style='margin-top: 15px;' class='modal-input modal-input-medium-description' id='interview-question" + numOfQuestions + "' placeholder='Enter one relevant interview question at a time.'></textarea>";
+        $('#cached-questions').append(htmlStr);
     }
-})*/
+})
