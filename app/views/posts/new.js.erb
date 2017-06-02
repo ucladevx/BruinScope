@@ -160,7 +160,7 @@ function getQuestionStr(){
         if($(selector).val() === "")
             continue;
         else if(hasPlacedFirstElement)
-            ret += ", " + $(selector).val();
+            ret += "•§£¡™" + $(selector).val();
     
         else{
             ret += $(selector).val();
@@ -169,6 +169,8 @@ function getQuestionStr(){
     }
     return ret;
 }
+
+
 
 
 $(document).on("click", "#next-button", function(e){
@@ -214,6 +216,6 @@ $('#r10').click(function() {
    if($('#r10').is(':checked')) { postForm(); }
 });
 
-
-
-
+$('#post-button').click(function() {
+	$('#interview-question1').val(getQuestionStr());
+});
