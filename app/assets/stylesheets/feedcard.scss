@@ -130,8 +130,10 @@ h2{
    margin-bottom: 0;
  }
  h3.big{
-   font-size: 24px !important;
-   line-height: 32px;
+   font-size: 26px !important;
+   line-height: 36px;
+   padding-bottom: 2px;
+   margin-top: 32px !important;
  }
 h4{
   font-size: 14px;
@@ -140,6 +142,12 @@ h4{
   margin-bottom: 0;
   padding: 0;
   line-height: 20px;
+}
+h6{
+  font-size: 16px;
+  font-weight: 700;
+  color: #53575A;
+  margin-bottom: 10px;
 }
 .postcard-big-spacing{
   padding-bottom: 6px;
@@ -217,6 +225,9 @@ h4{
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 
+}
+.fourteen{
+  font-size: 14px !important;
 }
 .tag-button:hover{
   cursor: pointer;
