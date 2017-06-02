@@ -18,8 +18,8 @@ function showModal(modalClass){
 }
 
 function hideModal(modalClass){
-	//$('body').removeClass('locked');
-	//$('.' + modalClass).addClass('yhide');
+	$('body').removeClass('locked');
+	$('.' + modalClass).addClass('yhide');
 }
 
 function createNewPost(e){
@@ -76,7 +76,3 @@ $("#pd").click(function () {
 $("#ds").click(function () {
     $(this).toggleClass(".tag-button-clicked");
 });
-
-
-
-
