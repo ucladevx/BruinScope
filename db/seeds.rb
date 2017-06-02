@@ -61,6 +61,16 @@ if User.count > 0
 			offer: "declined",
 			difficulty: "avg"
 		},
+		{
+			title: "Data Mining with Stripe",
+			experience: "Had an awesome chat regarding Map Reduce and Hadoop with the interviewer. It was a very casual conversation that simultaneously tested my knowledge of data mining...",
+			question: "Describe Map Reduce, Describe Hadoop's architecture",
+			resources: "CS 145",
+			company: "Stripe",
+			position: "Data Science Internship",
+			offer: "accepted",
+			difficulty: "avg"
+		},
 	]
 
 	posts.each do |post|
