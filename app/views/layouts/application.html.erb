@@ -14,7 +14,7 @@
 		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	</head>
 
-	<body style="background-color: #F4F4F4;">
+	<body style="background-color: #FAFAFA;">
 		<!-- Nav Bar-->
 		<%= render partial: 'shared/navbar' %>
     <div class="alert hidden alert-dismissable">
@@ -23,4 +23,5 @@
     </div>
 		<%= yield %>
 	</body>
+  <%= yield :javascript_includes %>
 </html>

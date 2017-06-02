@@ -8,6 +8,7 @@
 	which then triggers an HTML injection into the showme div inside home.html.erb which then
 	render this file
 -->
+<% if post %>
 <div class="postmodal newpostmodal postview yhide">
   <div class="overlay" onclick="hideModal('postview')">
   </div>
@@ -20,3 +21,4 @@
     </div>
   </div>
 </div>
+<% end %>

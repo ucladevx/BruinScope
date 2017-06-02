@@ -23,10 +23,13 @@
     <div class="modal-line-divider"></div>
     <h5>Experience Description</h5>
     <%= f.text_area :experience, class: 'modal-input modal-input-big-description', autofocus: true, required: true,
-          placeholder: 'How would you describe your interview and recruiting experience?' %>
+          placeholder: 'How would you describe your interview and recruiting experience? (Minimum of 50 characters)' %>
 	<div class="modal-line-divider"></div>
 	<h5>Interview Questions</h5>
-	<%= f.text_area :question, class: 'modal-input modal-input-medium-description', autofocus: true, placeholder: 'Enter relevant interview questions' %>
+	<div id="cached-questions">
+		<%= f.text_area :question, class: 'modal-input modal-input-medium-description', id: 'interview-question1', autofocus: true, placeholder: 'Enter one relevant interview question at a time.' %>
+	</div>
+	<div class="small-button" id="add-question-button">Add Question</div>
     <div class="modal-line-divider"></div>
     <h5>Unique Resources</h5>
     <%= f.text_area :resources, class: 'modal-input modal-input-small-description', autofocus: true, placeholder: 'What unique classes, books, and other materials were helpful for the interview preparation?' %>
@@ -37,7 +40,7 @@
     <h4 class="modal-page-num">Page 2 of 2</h4>
     <h3 class="modal-title">Share your recruiting experience</h3>
     <div class="modal-line-divider"></div>
-    <h5>How difficult was the interview?</h5>
+    <!--<h5>How difficult was the interview?</h5>
     <div>
         <input type="radio" id="r1" name="difficulty" value="easy"/>
         <label for="r1"><span></span>Easy</label>
@@ -64,7 +67,7 @@
         <input type="radio" id="r6" name="offer" value="no_offer" />
         <label for="r6"><span></span>No</label>
     </div>
-    <div class="modal-line-divider"></div>
+    <div class="modal-line-divider"></div>-->
     <h5>What would you say the position you interviewed for was most similar to?</h5>
     <div>
         <input type="radio" id="r7" name="role" value="software"/>
@@ -91,6 +94,9 @@
         </div>
     </div>
     <div class="modal-line-divider"></div>
-    <%= f.submit "Post", class: 'button', id: "next-button"%>
+    <div style="justify-content:flex-end;display:-webkit-flex; display:flex;">
+        <div class="back-button" style="margin-right:auto;" id="back-button">Back</div>
+        <%= f.submit "Post", class: 'button input-button-fix', id: "post-button"%>
+    </div>
   </div>
 <% end %>

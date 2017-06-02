@@ -8,9 +8,23 @@ class User < ApplicationRecord
   # acts_as_votable: Users "act as voter" to provide some reserve functionality.
   acts_as_voter
 
+  # A user will have many posts if not posted anonymously
+  has_many :posts, dependent: :destroy
+
+  # Profile image uploader 
+  mount_uploader :avatar, AvatarUploader
+
+  # Validate image integrity
+  validates_integrity_of :avatar
+  # Validate image processing
+  validates_processing_of :avatar
+
+	# Creating a user from Google Omniauth callback data
   def self.from_omniauth(access_token)
     data = access_token.info
-    user = User.where(:email => data["email"]).first
+    puts data
+    # if you ever want to get the image from google - data["image"]
+    user = User.where(email: data["email"]).first
 
     # Create user if it doesn't exist.
     unless user
@@ -27,5 +41,11 @@ class User < ApplicationRecord
   def full_name
     return "#{self.first_name} #{self.last_name}"
   end
+
+	private
+	# Validates that an image cannot be more than 5.0 Mega bytes
+	def avatar_size_validation
+		errors[:avatar] << "should be less than 5.0 MB" if avatar.size > 5.0.megabytes
+	end
 
 end

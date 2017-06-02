@@ -61,6 +61,10 @@ gem 'mini_magick', '~> 4.5'
 # Documentation: https://github.com/ryanto/acts_as_votable
 gem 'acts_as_votable', '~> 0.10.0'
 
+# Uses Rails Fog cloud services to communicate with Amazon S3
+# Documentation: https://github.com/fog/fog-aws
+gem 'fog-aws', '~> 1.3.0'
+
 # Allows for easy pushes of secret credentials
 # Documentation: https://github.com/laserlemon/figaro
 gem 'figaro'

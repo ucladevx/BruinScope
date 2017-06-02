@@ -1,11 +1,66 @@
 <p id="notice"><%= notice %></p>
 
-<h2 style="float: right"> <%= @company.name %> </h2>
+
 <div class="home-cards-container">
     <div class="card-fixed">
-      <%= render partial: 'shared/hotcompaniescard', locals: {companies: Company.all} %>
+
+
+    	<div class="card company-card">
+				<%= link_to main_app.company_path(@company.id) do %>
+					<%= image_tag @company.image, class: "big-company-icon" %>
+				<% end %>
+				<h3 style="text-align: center;"> <%= @company.name %> </h3>
+				<div class="secondary-info"style="text-align: center; padding-top: 2px;"><%= @company.location %></div>
+				<!--<div class="secondary-info"style="text-align: center; padding-top: 2px;">
+					<a href="http://<%= @company.link %>"><%= @company.link %></a>
+				</div >-->
+				<div class="company-line-divider"></div>
+   				<h3 class="secondary-info" style="padding-bottom: 5px;">Contributing Students</h3>
+   				<ul class="grid-students">
+					<li>
+						<img src="/assets/default_avatar.svg" class="full-profile-icon">
+					</li>
+					<li>
+						<img src="/assets/default_avatar.svg" class="full-profile-icon">
+					</li>
+					<li>
+						<img src="/assets/default_avatar.svg" class="full-profile-icon">
+					</li>
+					<li>
+						<img src="/assets/default_avatar.svg" class="full-profile-icon">
+					</li>
+					<li>
+						<img src="/assets/default_avatar.svg" class="full-profile-icon">
+					</li>
+					<li>
+						<img src="/assets/default_avatar.svg" class="full-profile-icon">
+					</li>
+					<li>
+						<img src="/assets/default_avatar.svg" class="full-profile-icon">
+					</li>
+					<li>
+						<img src="/assets/default_avatar.svg" class="full-profile-icon">
+					</li>
+					<li>
+						<img src="/assets/default_avatar.svg" class="full-profile-icon">
+					</li>
+					<li>
+						<img src="/assets/default_avatar.svg" class="full-profile-icon">
+					</li>
+					<li>
+						<img src="/assets/default_avatar.svg" class="full-profile-icon">
+					</li>
+					<li>
+						<img src="/assets/default_avatar.svg" class="full-profile-icon">
+					</li>
+
+				</ul>
+
+		</div>
+
+
     </div>
     <div>
-        <%= render partial: 'shared/feedcard', locals: {posts: @posts} %>
+        <%= render partial: 'shared/feedcard', locals: {posts: @posts, add: false} %>
     </div>
 </div>

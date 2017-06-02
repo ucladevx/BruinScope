@@ -10,6 +10,8 @@ function flashErrorMessage(message) {
   $(".alert").removeClass('hidden');
 }
 
+
+
 function showModal(modalClass){
 	$('body').addClass('locked');
 	$('.' + modalClass).removeClass('yhide');
@@ -50,9 +52,31 @@ $(document).on("click", ".close", function(e){
   });
 });
 
-$(document).on("click", "#next-button", function(e){
-    $('#step-1').fadeOut(200, function(){
-        $('#step-2').fadeIn(200);
-    });
-    $('#mod').scrollTop(0);
+
+
+$(document).on("click", "#filter-home-page", function(e) {
+    console.log("he");
+    $('#filter-home-page-card').fadeToggle(200, 'swing');
 });
+
+
+
+$("#se").click(function () {
+    $(this).toggleClass(".tag-button-clicked");
+});
+
+$("#pm").click(function () {
+    $(this).toggleClass(".tag-button-clicked");
+});
+
+$("#pd").click(function () {
+    $(this).toggleClass(".tag-button-clicked");
+});
+
+$("#ds").click(function () {
+    $(this).toggleClass(".tag-button-clicked");
+});
+
+
+
+

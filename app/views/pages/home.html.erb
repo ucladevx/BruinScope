@@ -14,6 +14,9 @@
 			<%= render partial: 'shared/hotcompaniescard', locals: {companies: @companies} %>
     </div>
     <div>
-        <%= render partial: 'shared/feedcard', locals: {posts: @posts} %>
+        <%= render partial: 'shared/feedcard', locals: {posts: @posts, add: true} %>
     </div>
 </div>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "typeahead.js/typeahead.bundle.min.js" %>
+<% end %>

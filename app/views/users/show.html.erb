@@ -1,2 +1,29 @@
 <p id="notice"><%= notice %></p>
-<h1><%= @user.full_name %>'s Profile</h4>
+<div class="showme">
+
+<!--- We are passing a variable for the partial to then be able to use throughout its code
+	and note that the only reason we are passing the first post by default so then we can
+	override the post based on the id from the GET request -->
+
+<!-- by default, in the modal show the new post partial -->
+	<%= render template:'posts/new', locals: {post: nil} %>
+</div>
+<div class="home-cards-container">
+	<div class="card-fixed">
+		<div class="card user-card">
+			<%= image_tag @user.avatar, class: "user-picture" %>
+			<h3 style="text-align: center;"> <%= @user.full_name %> </h3>
+			<% if current_user == @user %>
+			<div class="secondary-info"style="text-align: center; padding-top: 4px;">
+				<%= link_to "Edit", main_app.edit_user_registration_path(@user) %>
+			</div>
+			<div class="secondary-info"style="text-align: center; padding-top: 4px;">
+				<%= link_to "Logout", main_app.destroy_user_session_path, method: :delete %>
+			</div>
+		<% end %>
+		</div>
+	</div>
+	<div>
+		<%= render partial: 'shared/feedcard', locals: {posts: @posts, add: current_user == @user ? true : false } %>
+	</div>
+</div>

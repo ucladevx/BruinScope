@@ -1,0 +1,112 @@
+.twitter-typeahead{
+  width: 100% !important;
+}
+.tt-hint, .tt-input{
+  width: -webkit-calc(100% - 49px - 54px) !important;
+  width:    -moz-calc(100%  - 49px  - 54px) !important;
+  width:         calc(100%  - 49px  - 54px) !important; 
+}
+.tt-menu{
+  left: -50px !important;
+  width: -webkit-calc(100% - 54px) !important;
+  width:    -moz-calc(100% - 54px) !important;
+  width:         calc(100% - 54px) !important;
+}
+.twitter-typeahead{
+  position: absolute !important;
+}
+.tt-input { /* UPDATE: newer versions use tt-input instead of tt-query */
+    box-shadow: none;
+    outline: none !important;
+}
+.tt-input:focus{
+  outline: none !important;
+}
+.tt-hint { /* UPDATE: newer versions use tt-input instead of tt-query */
+    box-shadow: none;
+    outline: none !important;
+}
+.tt-hint:focus{
+  outline: none !important;
+}
+
+.tt-hint {
+    color: #999;
+}
+
+.tt-menu { /* UPDATE: newer versions use tt-menu instead of tt-dropdown-menu */
+    width: 422px;
+    margin-top: 1px;
+    padding: 8px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    border: 1px solid #DCE0E0;
+    border-radius: 5px;
+    padding: none;
+}
+.tt-open{
+  padding: 0;
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    font-size: 18px;
+    line-height: 40px;
+    color: black;
+    border-bottom: 1px solid #DCE0E0;
+}
+.tt-suggestion > a{
+  color: #53575A;
+  font-size: 14px !important
+}
+
+.tt-suggestion:hover {
+  background-color: #EFF7F8;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.tt-suggestion:hover > a{
+  color: #3691A8 !important;
+}
+
+.tt-cursor {
+  background-color: #EFF7F8;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.tt-cursor > a {
+  color: #3691A8 !important;
+}
+
+.tt-dataset-header {
+  margin-left: 10px;
+}
+
+.tt-suggestion-img {
+  width: 25px;
+  display: inline-block;
+  float: left;
+  margin-right: 12px;
+  margin-top: 7.5px;
+  border-radius: 3px;
+}
+.tt-suggestion {
+  display: block;
+  padding: 3px 12px;
+}
+.tt-suggestion.tt-is-under-cursor {
+  color: #fff;
+  background-color: #428bca;
+}
+.tt-suggestion.tt-is-under-cursor a {
+  color: #fff;
+}
+.tt-suggestion p {
+  margin: 0;
+}

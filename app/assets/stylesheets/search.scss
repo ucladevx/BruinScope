@@ -1,0 +1,60 @@
+.search-carousel {
+  position: relative;
+  padding: 0px 15px;
+  background: white;
+  
+  .slick-prev{
+    left: 10px;
+  }
+  .slick-next{
+    right: 10px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    clear  : both;
+  }
+
+  .search-card {
+    float: left;
+    margin: 30px 15px;
+    background: white;
+    .company-main{
+      width: 100%;
+    }
+  }
+
+  .user-card {
+    text-decoration: none;
+    margin: 10px;
+
+    .username {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    img.profile-picture {
+      object-fit: cover;
+      height: 64px;
+      width: 64px;
+      border-radius: 50%;
+    }
+  }
+  .company-image{
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50%;
+  }
+
+  .company-card {
+    margin: 10px;
+
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+}

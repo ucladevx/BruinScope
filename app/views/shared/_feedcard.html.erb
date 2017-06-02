@@ -1,20 +1,51 @@
 <div class="card feed-card trending-card">
 
     <% if !current_user.nil? %>
-    <h1 style="margin-bottom: 15px;">
-        Trending
-    </h1>
+
+    <div id="filter-home-page">
+        <h1 style="margin-bottom: 15px; display:inline-block;">
+            Trending &nbsp
+        </h1>
+        <div style="display: inline-block;" class="fa fa-caret-down">
+        </div>
+    </div>
+    <div id="filter-home-page-card">
+			<!--- going to have to make this an AJAX form to send position choice -->
+        <h3 style="padding-top: 0; margin-top: 0;" class="secondary-title">Filter By Position</h3>
+        <div style="margin-bottom: 20px;">
+            <h5 id="se" class="tag-button" style="margin-left: 0;">Software Engineering</h5>
+            <h5 id="pm" class="tag-button">Product Management</h5>
+            <h5 id="pd" class="tag-button">Product Design</h5>
+            <h5 id="ds" class="tag-button">Data Science</h5>
+        </div>
+        <div class="modal-line-divider"></div>
+        <h5>By Position</h5>
+        <div style="margin-bottom: 15px;">
+            <h5 class="tag-button" style="margin-left: 0;">Software Engineering</h5>
+            <h5 class="tag-button">Product Management</h5>
+            <h5 class="tag-button">Product Design</h5>
+            <h5 class="tag-button">Data Science</h5>
+        </div>
+
+    </div>
     <div class="line-divider add-your-experience-divider"></div>
-		<% if current_page?(main_app.root_path) %>
+		
+		<!--- Only show add button if its relevant as decided by top level view -->
+		<% if add %>
 			<%= link_to main_app.new_post_path, remote: true do %>
 				<h2 class="trending-card-input">Add your experience...</h2>
 			<% end %>
+		<div class="line-divider add-your-experience-divider"></div>
 		<% end %>
+		
 		<!-- <a class="new-post-button" onClick="createNewPost(event)">
 		</a> -->
-		<div class="line-divider add-your-experience-divider"></div>
-		<div>
-			<%= render partial: 'shared/postslist', locals: {posts: @posts} %>
+		<div id="posts">
+			<%= render partial: 'shared/postslist', locals: {posts: posts} %>
+			<!-- Pagination begins here -->
+			<div id="infinite-scrolling">
+				<%= will_paginate posts %>
+			</div>
 		</div>
     <% else %>
       <%= render partial: 'shared/not_logged_in' %>

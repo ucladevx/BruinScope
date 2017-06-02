@@ -6,8 +6,9 @@
               <% if post.company%>
                   <%= image_tag post.company.image, class: "tiny-company-icon" %>
                   <%= link_to post.company.name, main_app.company_path(post.company.id), class: "company-info"%>  &nbsp·&nbsp
+                  <a class="secondary-info"><%= post.position %></a>
               <% end %>
-                <a class="secondary-info"><%= post.position %></a>
+
           </div>
           <% @button_class = (current_user.voted_for? post)? "upvote-btn-clicked" : "" %>
           <%= link_to post_upvote_path(post.id), :id => "upvote", :class => @button_class + " upvote-btn text-center no-style", :remote => true do %>
@@ -18,7 +19,7 @@
 					<h3 class="postcard-tiny-spacing"> <%= post.title %> </h3>
 				<% end %>
 				<div class="secondary-info postcard-big-spacing">
-					Written by <%= sanitized_user_name(post.user) %> on <%= post.created_at.strftime('%B %e, %Y') %> &nbsp·&nbsp <%= formatted_post_offer(post) %> &nbsp·&nbsp <%= formatted_post_diffculty(post) %>
+					Written by <%= sanitized_user_name(post.user) %> on <%= post.created_at.strftime('%B %e, %Y') %> <!--&nbsp·&nbsp <%= formatted_post_offer(post) %> &nbsp·&nbsp <%= formatted_post_diffculty(post) %>-->
 				</div>
 				<h4> Interview Experience </h4>
 				<p class="postcard-small-spacing"> <%= post.experience %> </p>

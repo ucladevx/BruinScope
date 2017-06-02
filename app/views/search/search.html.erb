@@ -1,0 +1,23 @@
+<div class="card feed-card">
+	<% if !current_user.nil? %>
+		<h1 style="margin-bottom: 15px;">
+			Search results for "<%= @query %>"
+		</h1>
+		<h2> Companies </h2>
+		<%= render partial: 'shared/carousel', locals: {collection: @companies} %>
+		<h2> People </h2>
+		<%= render partial: 'shared/carousel', locals: {collection: @people} %>
+	<% end %>
+  <% if @experiences %>
+
+  <div id="posts">
+    <h1 style="text-decoration:underline;">Relevant posts</h1>
+    <%= render partial: 'shared/postslist', locals: {posts: @experiences} %>
+    <!-- Pagination begins here -->
+  </div>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+	initCarousel(".search-carousel", 2);
+</script>

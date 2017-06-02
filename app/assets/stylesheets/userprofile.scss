@@ -1,0 +1,21 @@
+ .card{
+  box-shadow: 0 2px 7px 0 rgba(0,0,0,0.12);
+  padding-left: 45px;
+  padding-right: 45px;
+  background-color: white;
+  border-radius: 5px;
+}
+.user-card{
+  width: 230px;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  padding-top: 30px;
+  padding-bottom: 30px; 
+}
+.user-picture {
+	width: 150px;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+	border-radius: 6px;
+}

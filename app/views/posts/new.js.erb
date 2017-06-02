@@ -6,3 +6,216 @@ $('.showme').html("<%= escape_javascript(render partial: "shared/newpost", local
 hideModal('getpostmodal');
 // Will activate the showModal function in the assets/javascript/getpostmodal.js
 showModal('newpostmodal');
+
+
+var lastInputStrLength = 0;
+var htmlStr = '';
+var numOfQuestions = 1;
+var interviewQuestionId = '#interview-question' + numOfQuestions;
+
+var companyName = '#company_name';
+var companyLength = 0;
+
+var postPosition = '#post_position';
+var positionLength = 0;
+
+var postTitle = '#post_title';
+var titleLength = 0;
+
+var postExperience = '#post_experience';
+var experienceLength = 0;
+
+var canProceed = false;
+
+function makeButtonClickable(){
+    $('#next-button').css('background-color', '#FF6376');
+    $('#next-button').css('color', 'white');
+    $('#next-button').css('border', 'none');
+    $('#next-button').css('cursor', 'pointer');
+    $('#next-button').hover(
+        function(){
+            $('#next-button').css('opacity', '0.8');
+        },
+        function(){
+            $('#next-button').css('opacity', '1');
+        }
+    );
+    canProceed = true;
+}
+
+function makeButtonUnclickable(){
+    $('#next-button').css('background-color', 'white');
+    $('#next-button').css('color', '#D3D3D3');
+    $('#next-button').css('border', '1px solid #DCE0E0');
+    $('#next-button').css('cursor', 'auto');
+    $('#next-button').hover(
+        function(){
+            $('#next-button').css('opacity', '1');
+        },
+        function(){
+            $('#next-button').css('opacity', '1');
+        }
+    );
+    canProceed = false;
+}
+
+$(companyName).on("keyup", function(e) {
+    var inputStr = $(this).val();
+    if (event.keyCode == 8 || event.keyCode == 46) {
+        inputStr = $(this).val();
+    }
+    companyLength = inputStr.length;
+    if(lastInputStrLength > 0 && experienceLength > 49 && titleLength > 0 && positionLength > 0 && companyLength > 0){
+        makeButtonClickable();
+    }
+    else{
+        makeButtonUnclickable();
+    }
+});
+
+$(postPosition).on("keyup", function(e) {
+    var inputStr = $(this).val();
+    if (event.keyCode == 8 || event.keyCode == 46) {
+        inputStr = $(this).val();
+    }
+    positionLength = inputStr.length;
+    if(lastInputStrLength > 0 && experienceLength > 49 && titleLength > 0 && positionLength > 0 && companyLength > 0){
+        makeButtonClickable();
+    }
+    else{
+        makeButtonUnclickable();
+    }
+});
+
+$(postTitle).on("keyup", function(e) {
+    var inputStr = $(this).val();
+    if (event.keyCode == 8 || event.keyCode == 46) {
+        inputStr = $(this).val();
+    }
+    titleLength = inputStr.length;
+    if(lastInputStrLength > 0 && experienceLength > 49 && titleLength > 0 && positionLength > 0 && companyLength > 0){
+        makeButtonClickable();
+    }
+    else{
+        makeButtonUnclickable();
+    }
+});
+
+$(postExperience).on("keyup", function(e) {
+    var inputStr = $(this).val();
+    if (event.keyCode == 8 || event.keyCode == 46) {
+        inputStr = $(this).val();
+    }
+    experienceLength = inputStr.length;
+    if(lastInputStrLength > 0 && experienceLength > 49 && titleLength > 0 && positionLength > 0 && companyLength > 0){
+        makeButtonClickable();
+    }
+    else{
+        makeButtonUnclickable();
+    }
+});
+
+$(interviewQuestionId).on("keyup", function(e) {
+        var inputStr = $(this).val();
+        if (event.keyCode == 8 || event.keyCode == 46) {
+            inputStr = $(this).val();
+        }
+        lastInputStrLength = inputStr.length;
+        if(lastInputStrLength > 0){
+            $('#add-question-button').css('color', '#53575A');
+
+        }
+        else{
+            $('#add-question-button').css('color', '#D3D3D3');
+        }
+        if(lastInputStrLength > 0 && experienceLength > 49 && titleLength > 0 && positionLength > 0 && companyLength > 0){
+            makeButtonClickable();
+        }
+        else{
+        makeButtonUnclickable();
+    }
+});
+
+
+
+$('#add-question-button').hover(function(e){
+    if(lastInputStrLength > 0){
+        $('#add-question-button').css('cursor', 'pointer');
+    }
+})
+
+$('#add-question-button').click( function(e){
+    if(lastInputStrLength > 0){
+        numOfQuestions += 1;
+        htmlStr = "<div class='light-modal-line-divider'></div><textarea style='margin-top: 15px;' class='modal-input modal-input-medium-description' id='interview-question" + numOfQuestions + "' placeholder='Enter one relevant interview question at a time.'></textarea>";
+        $('#cached-questions').append(htmlStr);
+    }
+})
+
+function getQuestionStr(){
+    var ret = '';
+    var hasPlacedFirstElement = false;
+    for(var i = 1; i <= numOfQuestions; i++){
+        var selector = "#interview-question" + i;
+        if($(selector).val() === "")
+            continue;
+        else if(hasPlacedFirstElement)
+            ret += "•§£¡™" + $(selector).val();
+    
+        else{
+            ret += $(selector).val();
+            hasPlacedFirstElement = true;
+        }
+    }
+    return ret;
+}
+
+
+
+
+$(document).on("click", "#next-button", function(e){
+    if(canProceed){
+        $('#step-1').fadeOut(200, function(){
+            $('#step-2').fadeIn(200);
+        });
+    }
+});
+$(document).on("click", "#back-button", function(e){
+    if(canProceed){
+        $('#step-2').fadeOut(200, function(){
+            $('#step-1').fadeIn(200);
+        });
+    }
+});
+
+function postForm(){
+    $('#post-button').css('background-color', '#FF6376');
+    $('#post-button').css('color', 'white');
+    $('#post-button').css('border', 'none');
+    $('#post-button').css('cursor', 'pointer');
+    $('#post-button').hover(
+        function(){
+            $('#post-button').css('opacity', '0.8');
+        },
+        function(){
+            $('#post-button').css('opacity', '1');
+        }
+    );
+}
+
+$('#r7').click(function() {
+   if($('#r7').is(':checked')) { postForm(); }
+});
+$('#r8').click(function() {
+   if($('#r8').is(':checked')) { postForm(); }
+});
+$('#r9').click(function() {
+   if($('#r9').is(':checked')) { postForm(); }
+});
+$('#r10').click(function() {
+   if($('#r10').is(':checked')) { postForm(); }
+});
+
+$('#post-button').click(function() {
+	$('#interview-question1').val(getQuestionStr());
+});

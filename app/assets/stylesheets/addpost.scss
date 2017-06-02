@@ -18,6 +18,11 @@ h5{
   background-color: #DCE0E0;
   width: 100%;
 }
+.light-modal-line-divider{
+  height: 1px;
+  background-color: #F4F4F4;
+  width: 100%;
+}
 
 .modal-line-vertical-divider{
   height: 78px;
@@ -58,14 +63,19 @@ h5{
 .modal-input:-moz-placeholder { /* Firefox 18- */
   color: #D3D3D3;
 }
+.input-button-fix{
+    padding: 0 !important;
+    width: 110.5px !important;
+    height: 42.5px !important;
+}
 .button{
   width: 110.5px;
   height: 42.5px;
   border-radius: 4px;
-  color: white;
-  background-color: #FF6376;
+  color: #D3D3D3;
+  background-color: white;
   font-size: 16px;
-  border: none;
+  border: 1px solid #DCE0E0;
   font-weight: 700;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -75,9 +85,48 @@ h5{
   text-align: center;
   padding-top: 10px;
 }
-.button:hover{
-  background-color: rgba(255, 99, 118, .8);
+.back-button{
+  width: 110.5px;
+  height: 42.5px;
+  border-radius: 4px;
+  color: #53575A;
+  background-color: white;
+  font-size: 16px;
+  border: 1px solid #DCE0E0;
+  font-weight: 700;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top: 30px;
+  text-align: center;
+  padding-top: 10px;
+}
+.back-button:hover{
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
+}
+
+.small-button{
+  width: 130px;
+  height: 28.3px;
+  border-radius: 2.7px;
+  color: #D3D3D3;
+  background-color: white;
+  border: 1px solid #DCE0E0;
+  font-size: 12px;
+  font-weight: 700;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top: 15px;
+  text-align: center;
+  padding-top: 4.5px;
+  margin-bottom: 15px;
 }
 .small-column{
   width:42%;
@@ -90,6 +139,7 @@ h5{
 #next-button{
 
 }
+
 
 #step-1{
 
@@ -122,7 +172,7 @@ input[type="radio"] + label span {
 }
 
 input[type="radio"]:checked + label span {
-  border: 3.5px solid #FF6376;
+  border: 3px solid #FF6376;
 }
 
 input[type="checkbox"] {
@@ -159,4 +209,24 @@ label{
   margin-bottom: 0;
 }
 
+#cached-questions{
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-bottom: 15px;
+}
 
+.question-container{
+  background-color: #EFF7F8;
+  border-radius: 10px;
+  margin-bottom: 15px;
+
+}
+.question{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}

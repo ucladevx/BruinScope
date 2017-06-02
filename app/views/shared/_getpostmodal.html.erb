@@ -12,17 +12,21 @@
 <div class="postmodal getpostmodal postview yhide">
   <div class="overlay" onclick="hideModal('postview')">
 
-  <div class="tab-container tab-container-active">
-    <div class="tab-active tab-element">Experience</div>
-  </div>
-  <div class="tab-container">
-    <div class="tab-element" style="margin-left: 50%;">Questions</div>
-  </div>
   <!--<ul class="tabrow">
         <li class="active">Experience</li>
         <li>Questions</li>
   </ul>-->
   <div class="modalcard">
+    <div style="height: 50px; background-color: #53575A; margin-top: -8px; margin-right: -8px; margin-left: -8px; border-top-right-radius: 4px;border-top-left-radius: 4px; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);">
+        <ul class="nav navbar-nav" style="color: white; float: none; width: 50%; margin: 0 auto; text-align: center;">
+          <li style="text-align: center">
+            <a class="navbar-link active" style="margin-right: 27px;margin-left: 27px;">Experience</a>
+          </li>
+          <li style="text-align: center;">
+            <a class="navbar-link inactive" style="margin-right: 27px;margin-left: 27px;">Questions</a>
+          </li>
+        </ul>
+    </div>
     <div class="button-close-container">
         <div class="button-close" onclick="hideModal('postview')">
           <div class="close hairline"></div>
@@ -30,29 +34,34 @@
     </div>
     <div class="inner">
       <div class="head">
-        <div class="first-experience-line">
-          <div style="line-height: 22px;">
+        <div class="first-experience-line" style="margin-top: 10px; margin-bottom: 20px;">
+          <div style="line-height: 22px;" class="fourteen">
               <% if post.company%>
                   <%= image_tag post.company.image, class: "tiny-company-icon" %>
-                  <%= link_to post.company.name, main_app.company_path(post.company.id), class: "company-info"%>&nbsp·&nbsp
+                  <%= link_to post.company.name, main_app.company_path(post.company.id), class: "company-info fourteen"%>&nbsp·&nbsp
               <% end %>
-                <a class="secondary-info"><%= post.position %></a>
+                <a class="secondary-info fourteen"><%= post.position %></a>
           </div>
           <% @button_class = (current_user.voted_for? post)? "upvote-btn-clicked" : "" %>
           <%= link_to post_upvote_path(post.id), :id => "upvote", :class => @button_class + " upvote-btn text-center no-style", :remote => true do %>
                 <i class="fa fa-arrow-circle-o-up"></i>&nbsp <div id="upvote-btn-line"></div> <span class="upvote-value btn-text">&nbsp+ <%= post.get_upvotes.size %></span>
           <% end %>
         </div>
+        <div class="modal-line-divider"></div>
         <h3 class="big">
           <%= post.title %>
         </h3>
-        <div class="secondary-info postcard-big-spacing">
-            Written by <%= sanitized_user_name(post.user) %> on <%= post.created_at.strftime('%B %e, %Y') %> &nbsp·&nbsp <%= formatted_post_offer(post) %> &nbsp·&nbsp <%= formatted_post_diffculty(post) %>
+        <div class="secondary-info postcard-big-spacing fourteen" style="padding-bottom: 0 !important;">
+            Written by <%= sanitized_user_name(post.user) %> on <%= post.created_at.strftime('%B %e, %Y') %>
         </div>
       </div>
+      <div class="modal-line-divider"></div>
       <div class="content">
         <div class="experience">
-            <%= post.experience %>
+            <h6>Interview Experience</h6>
+            <p clas="postcard-small-spacing">
+              <%= post.experience %>
+            </p>
         </div>
 				<!--<div class="experience">
 					<% unless post.question.nil? %>
