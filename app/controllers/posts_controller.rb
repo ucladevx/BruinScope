@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def show
     # Get the post id from the URL params
     @post = Post.find(params[:id])
+    @new_comment = Comment.build_from(@post, current_user.id, "")
 
     # Respond to a remote call (AJAX) with some javascript
     respond_to do |format|
@@ -72,6 +73,27 @@ class PostsController < ApplicationController
       puts "Not logged in."
     end
   end
+
+=begin
+  Comments v1.
+  def comment
+    puts "[TEST OUTPUT]: On comment click"
+    @post = Post.find(params[:post_id])
+    @user = current_user
+
+    respond_to do |format|
+      @comment = Comment.build_from( @post, @user.id, "Test comment" )
+      @all_comments = @post.comment_threads
+      puts @all_comments
+
+      @all_comments.each do |child_comment|
+        puts "hello"
+        puts "Content" + child_comment
+      end
+      format.js { render json: @post.to_json, content_type: 'application/json' }
+    end
+  end
+=end
 
   def update
     respond_to do |format|

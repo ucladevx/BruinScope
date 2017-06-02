@@ -18,8 +18,8 @@ function showModal(modalClass){
 }
 
 function hideModal(modalClass){
-	$('body').removeClass('locked');
-	$('.' + modalClass).addClass('yhide');
+	//$('body').removeClass('locked');
+	//$('.' + modalClass).addClass('yhide');
 }
 
 function createNewPost(e){
@@ -41,6 +41,7 @@ function onNewPostErrorHandler(event, data, status, xhr) {
 $(document).on("ajax:success", "#new-post-form", onNewPostSuccessHandler);
 
 $(document).on("ajax:ajaxError", "#new-post-form", onNewPostErrorHandler);
+
 
 $(document).on("click", ".close", function(e){
   e.preventDefault();

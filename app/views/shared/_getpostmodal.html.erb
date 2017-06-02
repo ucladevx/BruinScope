@@ -70,6 +70,7 @@
 					<% end %>
 				</div>-->
       </div>
+      <%= render partial: "comments/template", locals: {commentable: @post, new_comment: @comment} %>
     </div>
   </div>
 </div>

@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :posts do
     get 'upvote' => 'posts#upvote', as: :upvote
   end
+
+  resources :comments
+
   resources :companies
 
   devise_for :users, :controllers => {

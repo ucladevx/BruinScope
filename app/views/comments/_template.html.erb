@@ -1,0 +1,20 @@
+<div class="comments-header">
+  <h4>
+    <%= commentable.comment_threads.count == 0 ? "no" : commentable.comment_threads.count %> comments
+  </h4>
+</div>
+
+<%= form_for @new_comment do |f| %>
+  <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
+  <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
+  <div class="field form-group">
+    <%= f.text_area :body %>
+  </div>
+  <div class="field form-group">
+    <%= submit_tag "Post comment", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<div class="comments-container">
+  <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
+</div>

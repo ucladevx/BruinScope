@@ -4,6 +4,9 @@ class Post < ApplicationRecord
   # acts_as_votable: Posts is a votable model.
   acts_as_votable
 
+  # acts_as_commentable: Post is a commentable model.
+  acts_as_commentable
+
   # A Post belongs to a company and the user who created it
   belongs_to :user
   belongs_to :company
