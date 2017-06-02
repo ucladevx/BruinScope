@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   belongs_to :company
 
   # A Post will have many questions
-  has_many :questions
+  has_many :questions, dependent: :destroy
 
 	# Requirements for a post
 	validates :title, presence: true
@@ -27,15 +27,15 @@ class Post < ApplicationRecord
   scope :hot, -> (count) { where("count >= ?", 3) }
 
 	# Callback instantiation - finish up once questions are ready
-	# before_save :save_questions
+	before_save :save_questions
 
   private
 
   # Callback to save questions to the relevant post
 	def save_questions
-		all_questions = self.question.split(/\s*,\s*/)
+		all_questions = self.question.split(/\s*•§£¡™\s*/)
 		for q in all_questions
-			Question.create(question: q)
+			Question.create(question: q, post_id: self.id)
 		end
 	end
 
