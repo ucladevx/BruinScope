@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
 	# A Company will have many posts tied to it
-	has_many :posts
+	has_many :posts, dependent: :destroy
 
 	# Every company needs a name and location
 	validates :name , presence: true
