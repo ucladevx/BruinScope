@@ -25,7 +25,13 @@
 				<p class="postcard-small-spacing"> <%= post.experience %> </p>
 				<% unless post.question.nil? %>
 					<h4> Interview Questions </h4>
-					<p> <%= post.question %> </p>
+					<% if !post.questions.nil? %>
+						<% post.questions.each do |question| %>
+							<p> <%= question.question %> </p>
+						<% end %>
+					<% else %>
+						<p> <%= post.question %> </p>
+					<% end %>
 				<% end %>
 			</div>
 	</div>
