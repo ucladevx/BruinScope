@@ -21,15 +21,16 @@
         <div class="modal-line-divider"></div>
         <h5>By Position</h5>
         <div style="margin-bottom: 15px;">
-            <h5 class="tag-button" style="margin-left: 0;">Software Engineering</h5>
-            <h5 class="tag-button">Product Management</h5>
-            <h5 class="tag-button">Product Design</h5>
-            <h5 class="tag-button">Data Science</h5>
+            <!-- <h5 class="tag-button" style="margin-left: 0;">Software Engineering</h5> -->
+            <%= link_to "Software Engineering", {controller: "filters", action: "filter", role: "software"} , class:"tag-button", :remote => true %>
+            <%= link_to "Product Management", {controller: "filters", action: "filter", role: "product"} , class:"tag-button", :remote => true %>
+            <%= link_to "Product Design", {controller: "filters", action: "filter", role: "design"} , class:"tag-button", :remote => true %>
+            <%= link_to "Data Science", {controller: "filters", action: "filter", role: "data"} , class:"tag-button", :remote => true %>
         </div>
 
     </div>
     <div class="line-divider add-your-experience-divider"></div>
-		
+
 		<!--- Only show add button if its relevant as decided by top level view -->
 		<% if add %>
 			<%= link_to main_app.new_post_path, remote: true do %>
@@ -37,7 +38,7 @@
 			<% end %>
 		<div class="line-divider add-your-experience-divider"></div>
 		<% end %>
-		
+
 		<!-- <a class="new-post-button" onClick="createNewPost(event)">
 		</a> -->
 		<div id="posts">

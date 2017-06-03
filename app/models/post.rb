@@ -28,6 +28,7 @@ class Post < ApplicationRecord
   scope :latest, ->{ order("created_at desc") }
   scope :trending, -> (count) { where("count >= ?", 1) }
   scope :hot, -> (count) { where("count >= ?", 3) }
+  scope :role, -> (role) { where("role = ?", role) }
 
 	# Callback instantiation - finish up once questions are ready
 	before_save :save_questions

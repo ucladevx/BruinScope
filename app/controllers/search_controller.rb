@@ -24,7 +24,7 @@ class SearchController < ApplicationController
     exp_params = validate_exp_params(exp_params)
     return Post.where(exp_params)
   end
-
+  
   def typeahead
     query = params[:query]
     query = query.downcase
