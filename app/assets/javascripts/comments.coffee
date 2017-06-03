@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  $('.comment-reply').click ->
-    console.log "test"
+  $(document).on("click", ".comment-reply", (e) ->
     $(this).closest('.comment').find('.reply-form').toggle()
     return
+    )

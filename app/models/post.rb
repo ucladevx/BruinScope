@@ -37,9 +37,9 @@ class Post < ApplicationRecord
   # Callback to save questions to the relevant post
 	def save_questions
 		all_questions = self.question.split(/\s*•§£¡™\s*/)
+		# Add questions the questions to the post to make the association
 		for q in all_questions
-			Question.create(question: q, post_id: self.id)
+			self.questions.push(Question.create(question: q))
 		end
 	end
-
 end
