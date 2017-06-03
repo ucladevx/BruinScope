@@ -20,10 +20,10 @@
     <div class="modal-navbar-container">
         <ul class="nav navbar-nav modal-navbar">
           <li class="modal-navbar-list">
-            <a class="navbar-link modal-active modal-navbar-a">Experience</a>
+            <a id="experience-nav" class="navbar-link modal-active modal-navbar-a" onclick="getExperienceView()">Experience</a>
           </li>
           <li class="modal-navbar-list">
-            <a class="navbar-link modal-inactive modal-navbar-a">Questions</a>
+            <a id="questions-nav" class="navbar-link modal-inactive modal-navbar-a" onclick="getQuestionsView()">Questions</a>
           </li>
         </ul>
     </div>
@@ -32,7 +32,7 @@
           <div class="close hairline"></div>
         </div>
     </div>
-    <div class="inner">
+    <div class="inner experience-view">
       <div class="head">
         <div class="first-experience-line" style="margin-top: 10px; margin-bottom: 20px;">
           <div style="line-height: 22px;" class="fourteen">
@@ -70,7 +70,10 @@
 					<% end %>
 				</div>-->
       </div>
-      <%= render partial: "comments/template", locals: {commentable: @post, new_comment: @comment} %>
+      <!--<%= render partial: "comments/template", locals: {commentable: @post, new_comment: @comment} %>-->
+    </div>
+    <div class="inner questions-view">
+      <div>LKSJFLKSDJF</div>
     </div>
   </div>
 </div>

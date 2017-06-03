@@ -152,6 +152,10 @@ $('#add-question-button').click( function(e){
     }
 })
 
+$('.questions-modal-tag').click(function(e){
+    console.log("here i am !!!1");
+})
+
 function getQuestionStr(){
     var ret = '';
     var hasPlacedFirstElement = false;
@@ -180,6 +184,16 @@ $(document).on("click", "#next-button", function(e){
         });
     }
 });
+
+$(document).on("click", "#next-button", function(e){
+    if(canProceed){
+        $('#step-1').fadeOut(200, function(){
+            $('#step-2').fadeIn(200);
+        });
+    }
+});
+
+
 $(document).on("click", "#back-button", function(e){
     if(canProceed){
         $('#step-2').fadeOut(200, function(){
@@ -219,3 +233,14 @@ $('#r10').click(function() {
 $('#post-button').click(function() {
 	$('#interview-question1').val(getQuestionStr());
 });
+
+
+
+
+
+
+
+
+
+
+
