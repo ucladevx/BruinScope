@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 		if updated
 			set_flash_message :notice, :updated
 			sign_in @user, :bypass => true
-			redirect_to edit_user_registration_path
+			redirect_to user_path(@user.id)
 		else
 			render 'edit'
 		end
