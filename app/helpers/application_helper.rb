@@ -1,4 +1,5 @@
 module ApplicationHelper
+  # Showcases correct user upload taking care of Anonymous
   def sanitized_user_name(user)
     return (user.nil?) ? "Anonymous User" : user.full_name
   end
@@ -21,4 +22,13 @@ module ApplicationHelper
       return ""
     end
   end
+  # Presents the time something was created either in words
+  # or in date format
+  def show_date(time)
+		if time > Time.now.beginning_of_day
+			return "#{time_ago_in_words(time)} ago"
+		else
+			return time.strftime("%b %d, %Y")
+		end
+	end
 end
