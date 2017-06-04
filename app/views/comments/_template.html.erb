@@ -1,18 +1,21 @@
-<div class="comments-header">
-  <h4>
+<h6>Discussion</h6>
+<!--  <h4>
     <%= commentable.comment_threads.count == 0 ? "no" : commentable.comment_threads.count %> comments
   </h4>
-</div>
+</div>-->
 
 <%= form_for @new_comment do |f| %>
   <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
   <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
-  <div class="field form-group">
-    <%= f.text_area :body %>
+  <div style="position: relative; height: 100px;">
+    <%= link_to image_tag(current_user.avatar, class: "comment-img-icon inline-block"), main_app.user_path(current_user.id), style: "padding:0;"%>
+    <%= f.text_area :body, class: 'modal-input modal-input-small-description comment-input inline-block', autofocus: true, required: true,
+          placeholder: 'Add a comment' %>
   </div>
-  <div class="field form-group">
+  <%= submit_tag "Comment", class: 'small-button small-button-shift' %>
+  <!--<div class="field form-group">
     <%= submit_tag "Post comment", class: 'btn btn-primary' %>
-  </div>
+  </div>-->
 <% end %>
 
 <div class="comments-container">

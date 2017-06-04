@@ -34,7 +34,7 @@
     </div>
     <div class="inner experience-view">
       <div class="head">
-        <div class="first-experience-line" style="margin-top: 10px; margin-bottom: 20px;">
+        <div class="first-experience-line" style="margin-top: 10px; margin-bottom: 24px;">
           <div style="line-height: 22px;" class="fourteen">
               <% if post.company%>
                   <%= image_tag post.company.image, class: "tiny-company-icon" %>
@@ -69,8 +69,9 @@
 						<%= post.question %>
 					<% end %>
 				</div>-->
+        <div class="modal-line-divider" style="margin-top: 24px; margin-bottom: 24px;"></div>
+        <%= render partial: "comments/template", locals: {commentable: @post, new_comment: @comment} %>
       </div>
-      <!--<%= render partial: "comments/template", locals: {commentable: @post, new_comment: @comment} %>-->
     </div>
     <div class="inner questions-view">
       <div>LKSJFLKSDJF</div>

@@ -45,7 +45,7 @@ function makeButtonClickable(){
 
 function makeButtonUnclickable(){
     $('#next-button').css('background-color', 'white');
-    $('#next-button').css('color', '#D3D3D3');
+    $('#next-button').css('color', '#B1B1B1');
     $('#next-button').css('border', '1px solid #DCE0E0');
     $('#next-button').css('cursor', 'auto');
     $('#next-button').hover(
@@ -126,7 +126,7 @@ $(interviewQuestionId).on("keyup", function(e) {
 
         }
         else{
-            $('#add-question-button').css('color', '#D3D3D3');
+            $('#add-question-button').css('color', '#B1B1B1');
         }
         if(lastInputStrLength > 0 && experienceLength > 49 && titleLength > 0 && positionLength > 0 && companyLength > 0){
             makeButtonClickable();
