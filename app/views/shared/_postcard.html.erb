@@ -23,7 +23,6 @@
 				</div>
 				<h4> Interview Experience </h4>
 				<p class="postcard-small-spacing"> <%= post.experience %> </p>
-				<% unless post.question.nil? %>
 					<h4> Interview Questions </h4>
 					<% if !post.questions.nil? %>
 						<% post.questions.each do |question| %>
@@ -32,7 +31,6 @@
 					<% else %>
 						<p> <%= post.question %> </p>
 					<% end %>
-				<% end %>
 			</div>
 	</div>
 	<div class="line-divider"></div>
