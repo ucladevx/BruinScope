@@ -14,7 +14,7 @@
       <p style="margin-top: 14px;"><%= comment.body %><br></p>
       <div class="comment-nav"><a href="#" data-turbolinks="false" class="comment-reply">reply</a></div>
       <div class="reply-form">
-        <%= form_for @new_comment do |f| %>
+        <%= form_for(@new_comment, remote: true) do |f| %>
           <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
           <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
           <%= f.hidden_field :comment_id, value: comment.id %>

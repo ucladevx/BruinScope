@@ -64,7 +64,7 @@
             </p>
         </div>
         <div class="modal-line-divider" style="margin-top: 24px; margin-bottom: 24px;"></div>
-        <%= render partial: "comments/template", locals: {commentable: post, new_comment: post_comment} %>
+        <%= render partial: "comments/template", locals: {commentable: post, new_comment: post_comment, post: post} %>
       </div>
     </div>
     <div class="inner questions-view">
@@ -74,7 +74,7 @@
 							<h3> <%= question.question %> </h3>
 							<div class="modal-line-divider" style="margin-top: 24px; margin-bottom: 24px;"></div>
 							<% question_comment = Comment.build_from(question, current_user.id, "") %>
-							<%= render partial: "comments/template", locals: {commentable: question, new_comment: question_comment} %>
+							<%= render partial: "comments/template", locals: {commentable: question, new_comment: question_comment, post: post} %>
 						<% end %>
 					<% else %>
 						<h3> <%= post.question %> </h3>
