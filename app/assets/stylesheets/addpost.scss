@@ -1,5 +1,5 @@
 .modal-page-num{
-  color: #D3D3D3 !important;
+  color: #B1B1B1 !important;
   font-weight: 400 !important;
 }
 .modal-title{
@@ -52,16 +52,35 @@ h5{
   height: 100px;
 }
 .modal-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #D3D3D3;
+  color: #B1B1B1;
 }
 .modal-input::-moz-placeholder { /* Firefox 19+ */
-  color: #D3D3D3;
+  color: #B1B1B1;
 }
 .modal-input:-ms-input-placeholder { /* IE 10+ */
-  color: #D3D3D3;
+  color: #B1B1B1;
 }
 .modal-input:-moz-placeholder { /* Firefox 18- */
-  color: #D3D3D3;
+  color: #B1B1B1;
+}
+.comment-input{
+  border: 1px solid #DCE0E0 !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+  border-radius: 3px;
+  width: calc(100% - 64px) !important;
+  margin-left: 64px;
+}
+.comment-img-icon{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+}
+.inline-block{
+  display: inline-block;
 }
 .input-button-fix{
     padding: 0 !important;
@@ -72,7 +91,7 @@ h5{
   width: 110.5px;
   height: 42.5px;
   border-radius: 4px;
-  color: #D3D3D3;
+  color: #B1B1B1;
   background-color: white;
   font-size: 16px;
   border: 1px solid #DCE0E0;
@@ -114,7 +133,7 @@ h5{
   width: 130px;
   height: 28.3px;
   border-radius: 2.7px;
-  color: #D3D3D3;
+  color: #B1B1B1;
   background-color: white;
   border: 1px solid #DCE0E0;
   font-size: 12px;
@@ -127,6 +146,16 @@ h5{
   text-align: center;
   padding-top: 4.5px;
   margin-bottom: 15px;
+}
+.small-button-shift{
+  margin-top: 14px !important;
+  margin-left: 64px;
+  margin-bottom: 14px !important;
+}
+.small-button-color{
+  background-color: #FF6376 !important;
+  color: white !important;
+  border: none !important;
 }
 .small-column{
   width:42%;

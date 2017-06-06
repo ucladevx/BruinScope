@@ -23,7 +23,7 @@ h2{
  }
  .trending-card-input{
      line-height: 69px;
-     color: #D3D3D3;
+     color: #B1B1B1;
  }
  .first-experience-line{
      color: #B1B1B1;
@@ -147,7 +147,7 @@ h6{
   font-size: 16px;
   font-weight: 700;
   color: #53575A;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 .postcard-big-spacing{
   padding-bottom: 6px;
@@ -189,7 +189,7 @@ h6{
 }
 
 .fa-caret-down{
-  color: #D3D3D3;
+  color: #B1B1B1;
 }
 #filter-home-page{
 
@@ -295,4 +295,11 @@ h6{
 
 .modal-inactive{
   color: #B1B1B1 !important;
+}
+.modal-inactive:hover{
+  color: #53575A !important;
+}
+
+.questions-view{
+  display: none;
 }

@@ -2,11 +2,11 @@
 	<div class="search-carousel">
 			<% collection.each do |item| %>
 					<div class="search-card company-main">
-						<% if item[:search_category] == "company" %>
+							<% css_class = item[:search_category] == "company" ? "company-image" : "user-picture" %>
 							<%= link_to main_app.company_path(item[:id]) do %>
-								<%= image_tag item[:image], class: "company-image" %>
+								<%= image_tag item[:image], class: css_class %>
+								<h4> <%= item[:name] %> </h4>
 							<% end %>
-						<% end %>
 					</div>
 			<% end %>
 	</div>

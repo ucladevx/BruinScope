@@ -2,7 +2,7 @@
 // the show action in posts_controller.rb -- Note that this is overriding the local from the
 // views/pages/home.html.erb that was the very first post from the pages_controller.rb home action
 console.log(<%= @post.id %>);
-$('.showme').html("<%= escape_javascript(render partial: "shared/getpostmodal", locals: {post: @post} ) %>");
+$('.showme').html("<%= escape_javascript(render partial: "shared/getpostmodal", locals: {post: @post, post_comment: @new_comment} ) %>");
 hideModal('newpostmodal');
 // Will activate the showModal function in the assets/javascript/getpostmodal.js
 showModal('getpostmodal');

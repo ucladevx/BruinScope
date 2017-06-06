@@ -7,3 +7,9 @@ $ ->
     $(this).closest('.comment').find('.reply-form').toggle()
     return
     )
+	#$("#comment-form")
+	#	.on "ajax:beforeSend", (event, xhr, settings) ->
+	#		$(this).find('textarea').attr('disabled', 'disabled');
+	#	.on "ajax:success", (event, xhr, settings) ->
+	#		$(this).find('textarea').removeAttr('disabled', 'disabled').val('');
+	#		$(xhr.responseText).hide().insertAfter($(this)).show('slow')

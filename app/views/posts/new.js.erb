@@ -45,7 +45,7 @@ function makeButtonClickable(){
 
 function makeButtonUnclickable(){
     $('#next-button').css('background-color', 'white');
-    $('#next-button').css('color', '#D3D3D3');
+    $('#next-button').css('color', '#B1B1B1');
     $('#next-button').css('border', '1px solid #DCE0E0');
     $('#next-button').css('cursor', 'auto');
     $('#next-button').hover(
@@ -126,7 +126,7 @@ $(interviewQuestionId).on("keyup", function(e) {
 
         }
         else{
-            $('#add-question-button').css('color', '#D3D3D3');
+            $('#add-question-button').css('color', '#B1B1B1');
         }
         if(lastInputStrLength > 0 && experienceLength > 49 && titleLength > 0 && positionLength > 0 && companyLength > 0){
             makeButtonClickable();
@@ -150,6 +150,10 @@ $('#add-question-button').click( function(e){
         htmlStr = "<div class='light-modal-line-divider'></div><textarea style='margin-top: 15px;' class='modal-input modal-input-medium-description' id='interview-question" + numOfQuestions + "' placeholder='Enter one relevant interview question at a time.'></textarea>";
         $('#cached-questions').append(htmlStr);
     }
+})
+
+$('.questions-modal-tag').click(function(e){
+    console.log("here i am !!!1");
 })
 
 function getQuestionStr(){
@@ -180,6 +184,16 @@ $(document).on("click", "#next-button", function(e){
         });
     }
 });
+
+$(document).on("click", "#next-button", function(e){
+    if(canProceed){
+        $('#step-1').fadeOut(200, function(){
+            $('#step-2').fadeIn(200);
+        });
+    }
+});
+
+
 $(document).on("click", "#back-button", function(e){
     if(canProceed){
         $('#step-2').fadeOut(200, function(){
@@ -219,3 +233,14 @@ $('#r10').click(function() {
 $('#post-button').click(function() {
 	$('#interview-question1').val(getQuestionStr());
 });
+
+
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,26 @@ function flashErrorMessage(message) {
   $(".alert").removeClass('hidden');
 }
 
+function getQuestionsView(){
+    $('.experience-view').fadeOut(200, function(){
+            $('.questions-view').fadeIn(200);
+    });
+    $('#experience-nav').removeClass('modal-active');
+    $('#experience-nav').addClass('modal-inactive');
 
+    $('#questions-nav').addClass('modal-active');
+    $('#questions-nav').removeClass('modal-inactive');
+}
+function getExperienceView(){
+    $('.questions-view').fadeOut(200, function(){
+            $('.experience-view').fadeIn(200);
+    });
+    $('#questions-nav').removeClass('modal-active');
+    $('#questions-nav').addClass('modal-inactive');
+
+    $('#experience-nav').addClass('modal-active');
+    $('#experience-nav').removeClass('modal-inactive');
+}
 
 function showModal(modalClass){
 	$('body').addClass('locked');

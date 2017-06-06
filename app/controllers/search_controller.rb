@@ -66,6 +66,8 @@ class SearchController < ApplicationController
       pers = {}
       pers[:id] = person[:id]
       pers[:name] = [person[:first_name], person[:last_name]].join(' ')
+      pers[:image] = person.avatar.url
+      puts pers[:image]
       pers[:search_category] = "person"
       people_arr.push(pers)
     end
