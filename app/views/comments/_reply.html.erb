@@ -18,6 +18,7 @@
           <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
           <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
           <%= f.hidden_field :comment_id, value: comment.id %>
+					<%= f.hidden_field :post_id, value: post.id %>
           <div class="field form-group">
             <%= f.text_area :body %>
           </div>
@@ -27,6 +28,6 @@
         <% end %>
       </div>
     </div>
-    <%= render partial: "comments/reply", locals: {comments: comment.children} %>
+    <%= render partial: "comments/reply", locals: {comments: comment.children, post: post} %>
   </div>
 <% end %>

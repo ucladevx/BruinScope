@@ -1,1 +1,1 @@
-$(".comments-container").html("<%= escape_javascript(render partial: 'comments/reply', locals: {comments: @post.root_comments} ) %>"); 
+$(".comments-container").html("<%= escape_javascript(render partial: 'comments/reply', locals: {comments: @post.root_comments, post: @post} ) %>"); 
