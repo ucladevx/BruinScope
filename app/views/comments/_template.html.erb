@@ -6,9 +6,10 @@
 
 <div id="comment-form">
 	<!--- add remote:true here for AJAX -->
-<%= form_for new_comment do |f| %>
-  <%= f.hidden_field :commentable_id, value: new_comment.commentable_id %>
-  <%= f.hidden_field :commentable_type, value: new_comment.commentable_type %>
+<%= form_for(@new_comment, remote: true) do |f| %>
+  <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
+  <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
+  <%= f.hidden_field :post_id, value: post.id %>
   <div style="position: relative; height: 100px;">
     <%= link_to image_tag(current_user.avatar, class: "comment-img-icon inline-block"), main_app.user_path(current_user.id), style: "padding:0;"%>
     <%= f.text_area :body, class: 'modal-input modal-input-small-description comment-input inline-block', autofocus: true, required: true,
@@ -22,5 +23,5 @@
 </div>
 
 <div class="comments-container">
-  <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
+  <%= render partial: "comments/reply", locals: {comments: commentable.root_comments, post: post, level: 0} %>
 </div>
