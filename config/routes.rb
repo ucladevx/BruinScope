@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     get 'upvote' => 'posts#upvote', as: :upvote
   end
 
-  resources :comments
+  resources :comments do
+    get 'upvote' => 'comments#upvote', as: :upvote
+  end
 
   resources :companies
 

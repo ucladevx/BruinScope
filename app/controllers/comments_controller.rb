@@ -14,6 +14,28 @@ class CommentsController < ApplicationController
     end
   end
 
+  def upvote
+    # Get the comment id from the URL params
+    @comment = Comment.find(params[:comment_id])
+    @user = current_user
+    if @user.present?
+      if !(@user.voted_for? @comment)
+        @comment.liked_by current_user
+      else
+        @comment.unliked_by current_user
+      end
+      respond_to do |format|
+        # add in upvote value to json
+        @comment_json = JSON::parse(@comment.to_json).merge({upvote: @comment.votes_for.size})
+        # post json to page let EventHandler handle
+        format.js { render json: @comment_json, content_type: 'application/json' }
+      end
+    else
+      puts "\n\n\n\n"
+      puts "Not logged in."
+    end
+  end
+
   private
 
   def comment_params

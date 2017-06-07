@@ -11,6 +11,10 @@
         <div class="secondary-info fourteen"> <%= show_date(comment.created_at)  %> </div>
       </div>
     </div>
+		<% @button_class = (current_user.voted_for? comment)? "upvote-btn-clicked" : "" %>
+		<%= link_to comment_upvote_path(comment.id), :id => "upvote", :class => @button_class + " upvote-btn text-center no-style", :remote => true do %>
+					<i class="fa fa-arrow-circle-o-up"></i>&nbsp <div id="upvote-btn-line"></div> <span class="upvote-value btn-text">&nbsp+ <%= comment.get_upvotes.size %></span>
+		<% end %>
       <p style="margin-top: 14px;"><%= comment.body %><br></p>
 			<% if(level == 0) %>
 				<div class="comment-nav"><a href="#" data-turbolinks="false" class="comment-reply">reply</a></div>
