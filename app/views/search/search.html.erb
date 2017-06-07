@@ -1,11 +1,13 @@
 <div class="card feed-card">
 	<% if !current_user.nil? %>
 		<h1 style="margin-bottom: 15px;">
-			Search results for "<%= @query %>"
+			Search Results for "<%= @query %>"
 		</h1>
-		<h2> Companies </h2>
+		<div class="line-divider"></div>
+		<h6> Companies </h6>
 		<%= render partial: 'shared/carousel', locals: {collection: @companies} %>
-		<h2> People </h2>
+		<div class="line-divider"></div>
+		<h6> People </h6>
 		<%= render partial: 'shared/carousel', locals: {collection: @people} %>
 	<% end %>
   <% if @experiences %>

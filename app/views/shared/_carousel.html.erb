@@ -5,7 +5,7 @@
 							<% css_class = item[:search_category] == "company" ? "company-image" : "user-picture" %>
 							<%= link_to main_app.company_path(item[:id]) do %>
 								<%= image_tag item[:image], class: css_class %>
-								<h4> <%= item[:name] %> </h4>
+								<h4 style="text-align:center;"> <%= item[:name] %> </h4>
 							<% end %>
 					</div>
 			<% end %>

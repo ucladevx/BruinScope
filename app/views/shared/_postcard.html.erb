@@ -26,10 +26,10 @@
 					<h4> Interview Questions </h4>
 					<% if !post.questions.nil? %>
 						<% post.questions.each do |question| %>
-							<p> <%= question.question %> </p>
+							<p style="margin-bottom: 0;"> <%= question.question %> </p>
 						<% end %>
 					<% else %>
-						<p> <%= post.question %> </p>
+						<p style="margin-bottom: 0;"> <%= post.question %> </p>
 					<% end %>
 			</div>
 	</div>
