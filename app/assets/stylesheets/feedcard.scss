@@ -208,7 +208,7 @@ h6{
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.18);
   border-radius: 2px;
   display: none;
-  padding:20px;
+  padding: 30px;
   border: 1px solid #DCE0E0;
 }
 
@@ -220,7 +220,7 @@ h6{
   padding-top: 4px;
   padding-bottom: 4px;
   color: #B1B1B1 !important;
-  border-radius: 10px;
+  border-radius: 15px;
   margin-left: 10px;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
@@ -246,17 +246,10 @@ h6{
   color: white !important;
 }
 
-.tag-button-clicked{
-    background-color: #FF6376 !important;
-    color: white !important;
+.tag-button-clicked {
+  background-color: #FF6376 !important;
+  color: white !important;
 }
-#se{}
-
-#pm{}
-
-#pd{}
-
-#ds{}
 
 .modal-navbar-container{
   height: 50px;
@@ -302,4 +295,50 @@ h6{
 
 .questions-view{
   display: none;
+}
+
+a:focus{
+  text-decoration: none;
+}
+
+#filter-cancel{
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+#filter-apply{
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+#filter-cancel:hover{
+  cursor: pointer;
+}
+#filter-apply:hover{
+  cursor: pointer;
+}
+
+.order-by-element{
+  width: 100%;
+  background-color: #F4F4Fa;
+  padding: 10px 0 10px 10px;
+  border-radius: 5px 5px 0 0;
+  color: #B1B1B1;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.order-by-element:hover{
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  color: #53575A;
+  cursor: pointer;
+}
+
+.order-by-element:active, .order-by-element:focus {
+  background-color: #FF6376 !important;
+  color: white !important;
 }

@@ -11,22 +11,33 @@
     </div>
     <div id="filter-home-page-card">
 			<!--- going to have to make this an AJAX form to send position choice -->
-        <h3 style="padding-top: 0; margin-top: 0;" class="secondary-title">Filter By Position</h3>
-        <!-- <div style="margin-bottom: 20px;">
-            <h5 id="se" class="tag-button" style="margin-left: 0;">Software Engineering</h5>
-            <h5 id="pm" class="tag-button">Product Management</h5>
-            <h5 id="pd" class="tag-button">Product Design</h5>
-            <h5 id="ds" class="tag-button">Data Science</h5>
-        </div> -->
-        <div class="modal-line-divider"></div>
-        <h5>By Position</h5>
-        <div style="margin-bottom: 15px;">
+		<h3 style="padding-top: 0; margin-top: 0;" class="secondary-title">Order By </h3>
+		<div style="margin-bottom: 30px; border-radius: 5px;">
+		    <div class="order-by-element">Trending</div>
+		    <div class="modal-line-divider"></div>
+		    <div class="order-by-element" style="border-radius: 0;">New</div>
+		    <div class="modal-line-divider"></div>
+		    <div class="order-by-element" style="border-radius: 0 0 5px 5px;">Top</div>
+		</div>
+        <!--<div style="margin-bottom: 30px; margin-left: -10px;">
+            <%= link_to "Trending", {controller: "filters", action: "filter", role: "software"} , class:"tag-button", :remote => true %>
+            <%= link_to "New", {controller: "filters", action: "filter", role: "product"} , class:"tag-button", :remote => true %>
+            <%= link_to "Top", {controller: "filters", action: "filter", role: "design"} , class:"tag-button", :remote => true %>
+        </div>-->
+        <div class="modal-line-divider" style="margin-bottom: 30px;"></div>
+        <h3 style="padding-top: 0; margin-top: 0;" class="secondary-title">Filter By Category</h3>
+        <div style="margin-bottom: 30px; margin-left: -10px;">
             <!-- <h5 class="tag-button" style="margin-left: 0;">Software Engineering</h5> -->
             <%= link_to "Software Engineering", {controller: "filters", action: "filter", role: "software"} , class:"tag-button", :remote => true %>
             <%= link_to "Product Management", {controller: "filters", action: "filter", role: "product"} , class:"tag-button", :remote => true %>
-            <%= link_to "Product Design", {controller: "filters", action: "filter", role: "design"} , class:"tag-button", :remote => true %>
+            <%= link_to "Design", {controller: "filters", action: "filter", role: "design"} , class:"tag-button", :remote => true %>
             <%= link_to "Data Science", {controller: "filters", action: "filter", role: "data"} , class:"tag-button", :remote => true %>
         </div>
+
+        <div style="justify-content:flex-end;display:-webkit-flex; display:flex;">
+                <div class="small-button" id="filter-cancel" style="margin-right:auto; color: #53575A;">Cancel</div>
+                <div class="small-button" id="filter-apply" style="background-color:#FF6376; color: white; border: none;">Apply</div>
+         </div>
 
     </div>
     <div class="line-divider add-your-experience-divider"></div>
