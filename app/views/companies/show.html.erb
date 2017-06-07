@@ -11,9 +11,6 @@
 				<% end %>
 				<h3 style="text-align: center;"> <%= @company.name %> </h3>
 				<div class="secondary-info"style="text-align: center; padding-top: 2px;"><%= @company.location %></div>
-				<!--<div class="secondary-info"style="text-align: center; padding-top: 2px;">
-					<a href="http://<%= @company.link %>"><%= @company.link %></a>
-				</div >-->
 				<div class="company-line-divider"></div>
    				<h3 class="secondary-info" style="padding-bottom: 5px;">Contributing Students</h3>
    				<ul class="grid-students">
@@ -55,6 +52,11 @@
 					</li>
 
 				</ul>
+				<div class="company-line-divider"></div>
+				<div class="secondary-info">
+				    <span class="fa fa-globe"></span>
+                    <a href="http://<%= @company.link %>"><%= @company.link %></a>
+                </div >
 
 		</div>
 
