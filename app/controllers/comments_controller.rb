@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     commentable = commentable_type.constantize.find(commentable_id)
     @comment = Comment.build_from(commentable, current_user.id, body)
     @post = Post.find(post_id)
-    @new_comment = Comment.build_from(@post, current_user.id, "")
+    @new_comment = Comment.build_from(@post, current_user.id, "") # recreate new_comment on refresh partial (AJAX)
     respond_to do |format|
       if @comment.save
         make_child_comment

@@ -23,5 +23,5 @@
 </div>
 
 <div class="comments-container">
-  <%= render partial: "comments/reply", locals: {comments: commentable.root_comments, post: post} %>
+  <%= render partial: "comments/reply", locals: {comments: commentable.root_comments, post: post, level: 0} %>
 </div>
