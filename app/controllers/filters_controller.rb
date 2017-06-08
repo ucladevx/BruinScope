@@ -16,7 +16,7 @@ class FiltersController < ApplicationController
     # end
     print "filter hash"
     print hash
-    @posts = Post.filter(hash)
+    @posts = Post.filter(hash).order("created_at desc")
     print "POSTS"
     print @posts.inspect
     respond_to do |format|
