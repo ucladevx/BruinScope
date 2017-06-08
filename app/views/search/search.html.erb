@@ -5,27 +5,31 @@
 		</h1>
 		<div class="line-divider" style="margin-bottom: 45px;"></div>
 		<div style="margin-bottom: 45px;">
-            <h6 style="margin-top: 0; margin-bottom: 30px;"> Companies </h6>
-            <%= render partial: 'shared/carousel', locals: {collection: @companies} %>
+			<% unless @companies.nil? %>
+				<h6 style="margin-top: 0; margin-bottom: 30px;"> Companies </h6>
+				<%= render partial: 'shared/carousel', locals: {collection: @companies} %>
+				<div class="line-divider" style="margin-bottom: 45px;"></div>
+			<% end %>
 		</div>
-		<div class="line-divider" style="margin-bottom: 45px;"></div>
 		<div style="margin-bottom: 45px;">
-            <h6 style="margin-top: 0; margin-bottom: 30px;"> People </h6>
-            <%= render partial: 'shared/carousel', locals: {collection: @people} %>
-        </div>
-        <div class="line-divider"></div>
-        <div style="padding-bottom: 45px;"></div>
+			<% unless @people.nil? %>
+				<h6 style="margin-top: 0; margin-bottom: 30px;"> People </h6>
+				<%= render partial: 'shared/carousel', locals: {collection: @people} %>
+		</div>
+		<div class="line-divider"></div>
+		<div style="padding-bottom: 45px;"></div>
 	<% end %>
-  <% if @experiences %>
+<% end %>
+<% if @experiences %>
 
-  <div id="posts">
-    <h1 style="text-decoration:underline;">Relevant posts</h1>
-    <%= render partial: 'shared/postslist', locals: {posts: @experiences} %>
-    <!-- Pagination begins here -->
-  </div>
-  <% end %>
+	<div id="posts">
+		<h1 style="text-decoration:underline;">Relevant posts</h1>
+		<%= render partial: 'shared/postslist', locals: {posts: @experiences} %>
+		<!-- Pagination begins here -->
+	</div>
+<% end %>
 </div>
 
 <script type="text/javascript">
-	initCarousel(".search-carousel", 2);
+initCarousel(".search-carousel", 2);
 </script>
