@@ -3,7 +3,7 @@
     <% if !current_user.nil? %>
 
     <div id="filter-home-page">
-        <h1 style="margin-bottom: 15px; display:inline-block;">
+        <h1 style="margin-bottom: 15px; display:inline-block;" id="ordered-by">
             Trending &nbsp
         </h1>
         <div style="display: inline-block;" class="fa fa-caret-down">
@@ -14,30 +14,26 @@
 		<h3 style="padding-top: 0; margin-top: 0;" class="secondary-title">Order By </h3>
 
 		<div style="margin-bottom: 30px; border-radius: 5px;">
-		    <div class="order-by-element">Trending</div>
+		    <div class="order-by-element"><a href="#" data-order-by="trending">Trending</a></div>
 		    <div class="modal-line-divider"></div>
-		    <div class="order-by-element" style="border-radius: 0;">New</div>
+		    <div class="order-by-element" style="border-radius: 0;"><a href="#" data-order-by="new">New</a></div>
 		    <div class="modal-line-divider"></div>
-		    <div class="order-by-element" style="border-radius: 0 0 5px 5px;">Top</div>
+		    <div class="order-by-element" style="border-radius: 0 0 5px 5px;"><a href="#" data-order-by="top">Top</a></div>
 		</div>
-        <!--<div style="margin-bottom: 30px; margin-left: -10px;">
-            <%= link_to "Trending", {controller: "filters", action: "filter", role: "software"} , class:"tag-button", :remote => true %>
-            <%= link_to "New", {controller: "filters", action: "filter", role: "product"} , class:"tag-button", :remote => true %>
-            <%= link_to "Top", {controller: "filters", action: "filter", role: "design"} , class:"tag-button", :remote => true %>
-        </div>-->
         <div class="modal-line-divider" style="margin-bottom: 30px;"></div>
         <h3 style="padding-top: 0; margin-top: 0;" class="secondary-title">Filter By Category</h3>
         <div style="margin-bottom: 30px; margin-left: -10px;">
             <!-- <h5 class="tag-button" style="margin-left: 0;">Software Engineering</h5> -->
-            <%= link_to "Software Engineering", {controller: "filters", action: "filter", role: "software"} , class:"tag-button", :remote => true %>
-            <%= link_to "Product Management", {controller: "filters", action: "filter", role: "product"} , class:"tag-button", :remote => true %>
-            <%= link_to "Design", {controller: "filters", action: "filter", role: "design"} , class:"tag-button", :remote => true %>
-            <%= link_to "Data Science", {controller: "filters", action: "filter", role: "data"} , class:"tag-button", :remote => true %>
+            <a href="#" class="tag-button" data-filter-role="software">Software Engineering</a>
+            <a href="#" class="tag-button" data-filter-role="product">Product Management</a>
+            <a href="#" class="tag-button" data-filter-role="design">Design</a>
+            <a href="#" class="tag-button" data-filter-role="data">Data Science</a>
+            <!-- <%= link_to "Product Management", {controller: "filters", action: "filter", role: "product"} , class:"tag-button", :remote => true %> -->
         </div>
 
         <div style="justify-content:flex-end;display:-webkit-flex; display:flex;">
                 <div class="small-button" id="filter-cancel" style="margin-right:auto; color: #53575A;">Cancel</div>
-                <div class="small-button" id="filter-apply" style="background-color:#FF6376; color: white; border: none;">Apply</div>
+                <div class="small-button" id="filter-apply" style="background-color:#FF6376; color: white; border: none;" data-url = "<%= url_for(action: 'filter', controller: 'filters') %>">Apply</div>
          </div>
 
     </div>

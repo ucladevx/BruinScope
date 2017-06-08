@@ -71,7 +71,34 @@ $(document).on("click", ".close", function(e){
   });
 });
 
-
+function submitFilterForm(url) {
+  var data = {"roles":[]};
+  $(".tag-button-clicked").each(function(){
+    var role = $(this).attr('data-filter-role');
+    data["roles"].push(role);
+  })
+  $orderBy = $(".order-by-element-clicked");
+  if ($orderBy.length > 0) {
+    data["order_by"] = $orderBy.first().attr("data-order-by");
+    $("#ordered-by").html($orderBy.children('a').html());
+  }
+  console.log(data);
+  $.ajax({
+    url: url,
+    data: data,
+    type: "POST",
+    success: function(data) {
+      console.log("success");
+      // console.log(data);
+      // $("#posts")[0].innerHTML = data;
+      // $("#posts").html(data[])
+    },
+    complete: function(data, status) {
+      console.log(status);
+      $("#posts").html(data.responseText);
+    }
+  });
+}
 
 $(document).on("click", "#filter-home-page", function(e) {
     console.log("he");
@@ -79,19 +106,33 @@ $(document).on("click", "#filter-home-page", function(e) {
 });
 
 
-
-$("#se").click(function () {
-    $(this).toggleClass(".tag-button-clicked");
+$(document).on("click", ".tag-button", function(e){
+  e.preventDefault();
+  $(this).toggleClass("tag-button-clicked");
 });
 
-$("#pm").click(function () {
-    $(this).toggleClass(".tag-button-clicked");
+$(document).on("click", ".order-by-element", function(e){
+  $(".order-by-element-clicked").each(function(){
+    $(this).removeClass("order-by-element-clicked");
+  })
+  $(this).toggleClass("order-by-element-clicked");
 });
 
-$("#pd").click(function () {
-    $(this).toggleClass(".tag-button-clicked");
+$(document).on("click", ".order-by-element a", function(e){
+  e.preventDefault();
 });
 
-$("#ds").click(function () {
-    $(this).toggleClass(".tag-button-clicked");
+$(document).on("click", "#filter-cancel", function(e){
+  $(".order-by-element-clicked").each(function(){
+    $(this).removeClass("order-by-element-clicked");
+  })
+  $(".tag-button-clicked").each(function(){
+    $(this).removeClass("tag-button-clicked");
+  })
+});
+
+$(document).on("click", "#filter-apply", function(e){
+  var url = $(this).attr('data-url');
+  $('#filter-home-page-card').fadeToggle(200, 'swing');
+  submitFilterForm(url);
 });

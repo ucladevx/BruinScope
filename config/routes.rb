@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   match '/search', to: 'search#search', via: [:get]
   match '/search/typeahead/:query', to: 'search#typeahead', via: [:get]
-  match '/filter', to: 'filters#filter', via: [:get]
+  match '/filter', to: 'filters#filter', via: [:post]
 
 
 end

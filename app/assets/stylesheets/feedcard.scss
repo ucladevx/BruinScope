@@ -242,13 +242,15 @@ h6{
 }
 
 .tag-button:active, .tag-button:focus {
-  background-color: #FF6376 !important;
-  color: white !important;
+  // background-color: #FF6376 !important;
+  // color: white !important;
+  text-decoration: none;
 }
 
 .tag-button-clicked {
   background-color: #FF6376 !important;
   color: white !important;
+  text-decoration: none;
 }
 
 .modal-navbar-container{
@@ -329,7 +331,11 @@ a:focus{
   transition: all 0.2s;
 }
 
-.order-by-element:hover{
+.order-by-element a{
+  color: #B1B1B1;
+}
+
+.order-by-element:hover, .order-by-element:hover a,{
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
@@ -338,7 +344,10 @@ a:focus{
   cursor: pointer;
 }
 
-.order-by-element:active, .order-by-element:focus {
+.order-by-element:active, .order-by-element:focus, .order-by-element-clicked {
   background-color: #FF6376 !important;
+}
+
+.order-by-element:active a, .order-by-element:focus a, .order-by-element-clicked a {
   color: white !important;
 }
